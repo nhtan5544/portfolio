@@ -1,0 +1,65 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "about": "Giới thiệu",
+    "skills": "Kỹ năng",
+    "projects": "Dự án",
+    "contact": "Liên hệ"
+  },
+  "hero": {
+    "greeting": "Xin chào, tôi là",
+    "name": "Nguyen Huu Tan",
+    "title": "Frontend Developer",
+    "subtitle": "Tôi xây dựng những trải nghiệm web đẹp, hiệu suất cao và đầy sáng tạo.",
+    "cta_primary": "Xem dự án",
+    "cta_secondary": "Liên hệ tôi",
+    "scroll": "Cuộn xuống"
+  },
+  "about": {
+    "title": "Về tôi",
+    "subtitle": "Đam mê & Sáng tạo",
+    "description1": "Tôi là một Frontend Developer với hơn 3 năm kinh nghiệm xây dựng các giao diện web hiện đại. Tôi đam mê tạo ra những sản phẩm không chỉ đẹp về mặt thẩm mỹ mà còn mang lại trải nghiệm người dùng tuyệt vời.",
+    "description2": "Với nền tảng vững chắc về React, Next.js và Node.js, tôi luôn tìm kiếm những thách thức mới và cơ hội để phát triển bản thân trong lĩnh vực công nghệ.",
+    "stats": {
+      "projects": "Dự án",
+      "experience": "Năm KN",
+      "clients": "Khách hàng",
+      "coffee": "Ly cà phê"
+    }
+  },
+  "skills": {
+    "title": "Kỹ năng",
+    "subtitle": "Công nghệ tôi sử dụng",
+    "categories": {
+      "core": "Ngôn ngữ & Nền tảng",
+      "frameworks": "Frameworks & Libraries",
+      "tools": "Công cụ & Thiết kế"
+    }
+  },
+  "projects": {
+    "title": "Dự án",
+    "subtitle": "Những gì tôi đã xây dựng",
+    "view_demo": "Xem demo",
+    "view_code": "Xem code",
+    "featured": "Nổi bật"
+  },
+  "contact": {
+    "title": "Liên hệ",
+    "subtitle": "Hãy cùng làm việc",
+    "description": "Bạn có dự án thú vị? Hãy liên hệ với tôi, tôi rất muốn được hợp tác!",
+    "name": "Họ tên",
+    "email": "Email",
+    "message": "Tin nhắn",
+    "send": "Gửi tin nhắn",
+    "sending": "Đang gửi...",
+    "success": "Tin nhắn đã được gửi thành công!",
+    "name_placeholder": "Nhập họ tên của bạn",
+    "email_placeholder": "Nhập địa chỉ email",
+    "message_placeholder": "Mô tả dự án hoặc tin nhắn của bạn..."
+  },
+  "footer": {
+    "rights": "Tất cả quyền được bảo lưu.",
+    "made_with": "Được tạo với",
+    "using": "bằng Next.js"
+  }
+}

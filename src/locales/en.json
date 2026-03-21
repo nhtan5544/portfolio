@@ -1,0 +1,65 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Tronie Nguyen",
+    "title": "Frontend Developer",
+    "subtitle": "I build beautiful, high-performance, and creative web experiences.",
+    "cta_primary": "View Projects",
+    "cta_secondary": "Contact Me",
+    "scroll": "Scroll down"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Passion & Creativity",
+    "description1": "I'm a Frontend Developer with over 3 years of experience building modern web interfaces. I'm passionate about creating products that are not only aesthetically beautiful but also deliver exceptional user experiences.",
+    "description2": "With a solid foundation in React, Next.js, and Node.js, I'm always looking for new challenges and opportunities to grow in the technology field.",
+    "stats": {
+      "projects": "Projects",
+      "experience": "Yrs Exp",
+      "clients": "Clients",
+      "coffee": "Coffees"
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "Technologies I work with",
+    "categories": {
+      "core": "Languages & Core",
+      "frameworks": "Frameworks & Libraries",
+      "tools": "Tools & Design"
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "What I've built",
+    "view_demo": "View Demo",
+    "view_code": "View Code",
+    "featured": "Featured"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Let's work together",
+    "description": "Have an interesting project? Reach out to me, I'd love to collaborate!",
+    "name": "Full Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent successfully!",
+    "name_placeholder": "Enter your full name",
+    "email_placeholder": "Enter your email address",
+    "message_placeholder": "Describe your project or message..."
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "made_with": "Made with",
+    "using": "using Next.js"
+  }
+}
