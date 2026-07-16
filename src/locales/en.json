@@ -8,24 +8,38 @@
   },
   "hero": {
     "greeting": "Hi, I'm",
-    "name": "Tronie Nguyen",
-    "title": "Frontend Developer",
-    "subtitle": "I build beautiful, high-performance, and creative web experiences.",
+    "name": "Nguyen Huu Tan",
+    "nameAlt": "Tronie Nguyen",
+    "title": "Frontend & Mobile Developer",
+    "subtitle": "I build clear, smooth, and performance-minded interfaces for the web and mobile.",
     "cta_primary": "View Projects",
-    "cta_secondary": "Contact Me",
-    "scroll": "Scroll down"
+    "cta_secondary": "Get in Touch",
+    "scroll": "Scroll down",
+    "quick": {
+      "projects": "Projects",
+      "about": "About",
+      "skills": "Skills",
+      "contact": "Contact"
+    }
   },
   "about": {
-    "title": "About Me",
-    "subtitle": "Passion & Creativity",
-    "description1": "I'm a Frontend Developer with over 3 years of experience building modern web interfaces. I'm passionate about creating products that are not only aesthetically beautiful but also deliver exceptional user experiences.",
-    "description2": "With a solid foundation in React, Next.js, and Node.js, I'm always looking for new challenges and opportunities to grow in the technology field.",
-    "stats": {
-      "projects": "Projects",
-      "experience": "Yrs Exp",
-      "clients": "Clients",
-      "coffee": "Coffees"
-    }
+    "title": "About",
+    "subtitle": "About Me",
+    "mindset_title": "How I Work",
+    "craft_title": "Craft",
+    "description1": "I'm Nguyen Huu Tan (Tronie Nguyen) — a Frontend & Mobile Developer focused on building clear, smooth, performance-minded interfaces for both web and mobile apps.",
+    "description2": "I work mainly with React, Next.js and React Native, with close attention to UI/UX detail, accessibility, and maintainable code. Always open to new challenges.",
+    "focus": {
+      "web": "Frontend Web",
+      "mobile": "Mobile App",
+      "uiux": "UI/UX Craft"
+    },
+    "info": {
+      "location": "Location"
+    },
+    "open": "Open to collaborate",
+    "cv_hint": "No public CV yet",
+    "cv": "Request CV by email"
   },
   "skills": {
     "title": "Skills",
@@ -40,22 +54,31 @@
     "title": "Projects",
     "subtitle": "What I've built",
     "view_demo": "View Demo",
-    "view_code": "View Code",
+    "private": "Private source",
     "featured": "Featured"
   },
   "contact": {
     "title": "Contact",
     "subtitle": "Let's work together",
-    "description": "Have an interesting project? Reach out to me, I'd love to collaborate!",
+    "description": "Have an interesting project? Reach out, I'd love to collaborate!",
     "name": "Full Name",
     "email": "Email",
     "message": "Message",
-    "send": "Send Message",
-    "sending": "Sending...",
-    "success": "Message sent successfully!",
+    "send": "Open email to send",
     "name_placeholder": "Enter your full name",
     "email_placeholder": "Enter your email address",
     "message_placeholder": "Describe your project or message..."
+  },
+  "links": {
+    "subtitle": "Connect",
+    "title": "More Links",
+    "description": "Find me across the web",
+    "github": "GitHub",
+    "github_desc": "Follow my projects and open-source contributions",
+    "linkedin": "LinkedIn",
+    "linkedin_desc": "Connect and see my work history",
+    "email": "Email",
+    "email_desc": "The fastest way to reach me directly"
   },
   "footer": {
     "rights": "All rights reserved.",

@@ -1,20 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Facebook } from "lucide-react";
+import Image from "next/image";
+import { ArrowDown, ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
-
-const floatingOrbs = [
-  { size: 300, x: "10%", y: "20%", color: "from-indigo-500/20 to-purple-500/20", delay: 0 },
-  { size: 200, x: "70%", y: "10%", color: "from-pink-500/20 to-rose-500/20", delay: 1 },
-  { size: 250, x: "80%", y: "60%", color: "from-cyan-500/20 to-blue-500/20", delay: 2 },
-  { size: 180, x: "5%", y: "70%", color: "from-violet-500/20 to-indigo-500/20", delay: 0.5 },
-];
+import { Button } from "@/components/ui/button";
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
+  { icon: Github, href: "https://github.com/nhtan5544", label: "GitHub" },
+  {
+    icon: Linkedin,
+    href: "https://www.linkedin.com/in/tan-nguyen-huu-0ab0721b1/",
+    label: "LinkedIn",
+  },
+  { icon: Mail, href: "mailto:nhtan5544@gmail.com", label: "Email" },
+];
+
+const quickLinks = [
+  { key: "hero.quick.projects", href: "#projects" },
+  { key: "hero.quick.about", href: "#about" },
+  { key: "hero.quick.skills", href: "#skills" },
+  { key: "hero.quick.contact", href: "#contact" },
 ];
 
 export default function Hero() {
@@ -27,143 +33,126 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-[85vh] sm:min-h-screen flex items-center overflow-hidden pt-24 pb-20 sm:pb-0"
     >
-      {/* Animated background orbs */}
-      {floatingOrbs.map((orb, i) => (
-        <motion.div
-          key={i}
-          className={`absolute rounded-full bg-gradient-to-br ${orb.color} blur-3xl`}
-          style={{ width: orb.size, height: orb.size, left: orb.x, top: orb.y }}
-          animate={{
-            x: [0, 30, -20, 0],
-            y: [0, -20, 30, 0],
-            scale: [1, 1.1, 0.9, 1],
-          }}
-          transition={{
-            duration: 8 + i * 2,
-            delay: orb.delay,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-      ))}
+      <div aria-hidden className="absolute inset-0 dot-grid opacity-60" />
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-[radial-gradient(circle_at_15%_0%,color-mix(in_srgb,var(--primary)_15%,transparent),transparent_50%),radial-gradient(circle_at_85%_0%,color-mix(in_srgb,#ec4899_15%,transparent),transparent_50%),radial-gradient(circle_at_50%_100%,color-mix(in_srgb,var(--primary)_8%,transparent),transparent_50%)]"
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-[radial-gradient(circle,transparent_35%,var(--background)_100%)]"
+      />
 
-      {/* Grid pattern overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:40px_40px]" />
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Badge */}
+      <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center flex flex-col items-center">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: -10, scale: 0.9 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-indigo-200 dark:border-indigo-800 bg-indigo-50 dark:bg-indigo-950/50 text-indigo-600 dark:text-indigo-400 text-sm font-medium mb-8"
+          className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border-2 border-border shadow-lg mb-6"
         >
-          <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-          Available for work
+          <Image
+            src="/IMG_7719.jpg"
+            alt="Nguyen Huu Tan"
+            fill
+            sizes="128px"
+            className="object-cover object-bottom"
+            priority
+          />
         </motion.div>
 
-        {/* Greeting */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
+        <motion.h1
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-lg text-slate-500 dark:text-slate-400 mb-2"
+          className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground mb-3"
         >
-          {t("hero.greeting")}
-        </motion.p>
-
-        {/* Name */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-5xl sm:text-6xl lg:text-8xl font-black mb-4 tracking-tight"
-        >
-          <span className="gradient-text">{t("hero.name")}</span>
+          {t("hero.greeting")} <span className="gradient-text">{t("hero.name")}</span>
         </motion.h1>
 
-        {/* Title with typewriter effect */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
+        <motion.h2
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex items-center justify-center gap-3 mb-6"
+          transition={{ duration: 0.5, delay: 0.18 }}
+          className="text-lg sm:text-xl font-medium text-muted-foreground mb-4"
         >
-          <div className="h-px w-12 bg-gradient-to-r from-transparent to-indigo-500" />
-          <h2 className="text-xl sm:text-2xl font-semibold text-slate-700 dark:text-slate-300">
-            {t("hero.title")}
-          </h2>
-          <div className="h-px w-12 bg-gradient-to-l from-transparent to-pink-500" />
-        </motion.div>
+          {t("hero.title")}
+        </motion.h2>
 
-        {/* Subtitle */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-base sm:text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed"
+          transition={{ duration: 0.5, delay: 0.24 }}
+          className="text-base text-muted-foreground max-w-xl leading-relaxed mb-8"
         >
           {t("hero.subtitle")}
         </motion.p>
 
-        {/* CTA Buttons */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="flex flex-wrap items-center justify-center gap-2 mb-8"
         >
-          <motion.button
-            onClick={() => handleScroll("#projects")}
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-3.5 rounded-full gradient-bg text-white font-semibold text-sm shadow-lg hover:shadow-indigo-500/30 transition-shadow"
-          >
-            {t("hero.cta_primary")}
-          </motion.button>
-          <motion.button
-            onClick={() => handleScroll("#contact")}
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-3.5 rounded-full border-2 border-indigo-500 text-indigo-600 dark:text-indigo-400 font-semibold text-sm hover:bg-indigo-50 dark:hover:bg-indigo-950 transition-colors"
-          >
-            {t("hero.cta_secondary")}
-          </motion.button>
+          {quickLinks.map((link) => (
+            <button
+              key={link.key}
+              onClick={() => handleScroll(link.href)}
+              className="px-4 py-1.5 rounded-full border border-border bg-card/60 backdrop-blur-sm text-sm text-muted-foreground hover:text-foreground hover:border-primary/40 transition-colors"
+            >
+              {t(link.key)}
+            </button>
+          ))}
         </motion.div>
 
-        {/* Social Links */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          className="flex items-center justify-center gap-4"
+          transition={{ duration: 0.5, delay: 0.36 }}
+          className="flex flex-wrap items-center justify-center gap-4 mb-8"
+        >
+          <Button size="lg" className="h-11 px-6 rounded-full" onClick={() => handleScroll("#projects")}>
+            {t("hero.cta_primary")}
+            <ArrowRight className="size-4" />
+          </Button>
+          <Button
+            size="lg"
+            variant="outline"
+            className="h-11 px-6 rounded-full"
+            onClick={() => handleScroll("#contact")}
+          >
+            {t("hero.cta_secondary")}
+          </Button>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.42 }}
+          className="flex items-center justify-center gap-3"
         >
           {socialLinks.map(({ icon: Icon, href, label }) => (
-            <motion.a
+            <a
               key={label}
               href={href}
               target="_blank"
               rel="noopener noreferrer"
               aria-label={label}
-              whileHover={{ scale: 1.2, y: -3, rotate: 5 }}
-              whileTap={{ scale: 0.9 }}
-              className="p-3 rounded-full border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:text-indigo-500 dark:hover:text-indigo-400 hover:border-indigo-300 dark:hover:border-indigo-700 transition-colors bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm"
+              className="p-2.5 rounded-full border border-border text-muted-foreground hover:text-accent-foreground hover:border-primary/40 transition-colors"
             >
-              <Icon size={18} />
-            </motion.a>
+              <Icon size={17} />
+            </a>
           ))}
         </motion.div>
       </div>
 
-      {/* Scroll down indicator */}
       <motion.button
         onClick={() => handleScroll("#about")}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, y: [0, 8, 0] }}
         transition={{ duration: 2, delay: 1, repeat: Infinity }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-400 dark:text-slate-500 text-xs"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground text-xs"
       >
         <span>{t("hero.scroll")}</span>
         <ArrowDown size={16} />
