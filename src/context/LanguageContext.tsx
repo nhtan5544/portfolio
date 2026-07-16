@@ -18,7 +18,7 @@ const translations: Record<Locale, Translations> = { vi, en };
 const LanguageContext = createContext<LanguageContextType | null>(null);
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [locale, setLocale] = useState<Locale>("vi");
+  const [locale, setLocale] = useState<Locale>("en");
 
   const toggleLocale = useCallback(() => {
     setLocale((prev) => (prev === "vi" ? "en" : "vi"));

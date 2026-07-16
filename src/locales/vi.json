@@ -7,29 +7,43 @@
     "contact": "Liên hệ"
   },
   "hero": {
-    "greeting": "Xin chào, tôi là",
+    "greeting": "Xin chào, mình là",
     "name": "Nguyen Huu Tan",
-    "title": "Frontend Developer",
-    "subtitle": "Tôi xây dựng những trải nghiệm web đẹp, hiệu suất cao và đầy sáng tạo.",
+    "nameAlt": "Tronie Nguyen",
+    "title": "Frontend & Mobile Developer",
+    "subtitle": "Mình xây dựng giao diện web và ứng dụng di động rõ ràng, mượt mà và tối ưu hiệu suất.",
     "cta_primary": "Xem dự án",
-    "cta_secondary": "Liên hệ tôi",
-    "scroll": "Cuộn xuống"
+    "cta_secondary": "Liên hệ ngay",
+    "scroll": "Cuộn xuống",
+    "quick": {
+      "projects": "Dự án",
+      "about": "Giới thiệu",
+      "skills": "Kỹ năng",
+      "contact": "Liên hệ"
+    }
   },
   "about": {
-    "title": "Về tôi",
-    "subtitle": "Đam mê & Sáng tạo",
-    "description1": "Tôi là một Frontend Developer với hơn 3 năm kinh nghiệm xây dựng các giao diện web hiện đại. Tôi đam mê tạo ra những sản phẩm không chỉ đẹp về mặt thẩm mỹ mà còn mang lại trải nghiệm người dùng tuyệt vời.",
-    "description2": "Với nền tảng vững chắc về React, Next.js và Node.js, tôi luôn tìm kiếm những thách thức mới và cơ hội để phát triển bản thân trong lĩnh vực công nghệ.",
-    "stats": {
-      "projects": "Dự án",
-      "experience": "Năm KN",
-      "clients": "Khách hàng",
-      "coffee": "Ly cà phê"
-    }
+    "title": "Giới thiệu",
+    "subtitle": "Về mình",
+    "mindset_title": "Cách làm việc",
+    "craft_title": "Chuyên môn",
+    "description1": "Mình là Nguyen Huu Tan (Tronie Nguyen) — Frontend & Mobile Developer, tập trung xây dựng giao diện rõ ràng, mượt và tối ưu hiệu suất trên cả web lẫn ứng dụng di động.",
+    "description2": "Mình làm việc chủ yếu với React, Next.js và React Native, chú trọng chi tiết UI/UX, khả năng truy cập (accessibility) và code dễ bảo trì. Luôn sẵn sàng đón nhận thử thách mới.",
+    "focus": {
+      "web": "Frontend Web",
+      "mobile": "Mobile App",
+      "uiux": "UI/UX Craft"
+    },
+    "info": {
+      "location": "Địa điểm"
+    },
+    "open": "Sẵn sàng hợp tác",
+    "cv_hint": "Chưa có bản CV công khai",
+    "cv": "Yêu cầu CV qua email"
   },
   "skills": {
     "title": "Kỹ năng",
-    "subtitle": "Công nghệ tôi sử dụng",
+    "subtitle": "Công nghệ mình sử dụng",
     "categories": {
       "core": "Ngôn ngữ & Nền tảng",
       "frameworks": "Frameworks & Libraries",
@@ -38,24 +52,33 @@
   },
   "projects": {
     "title": "Dự án",
-    "subtitle": "Những gì tôi đã xây dựng",
+    "subtitle": "Những gì mình đã xây dựng",
     "view_demo": "Xem demo",
-    "view_code": "Xem code",
+    "private": "Mã nguồn riêng tư",
     "featured": "Nổi bật"
   },
   "contact": {
     "title": "Liên hệ",
     "subtitle": "Hãy cùng làm việc",
-    "description": "Bạn có dự án thú vị? Hãy liên hệ với tôi, tôi rất muốn được hợp tác!",
+    "description": "Bạn có dự án thú vị? Hãy liên hệ với mình, mình rất muốn được hợp tác!",
     "name": "Họ tên",
     "email": "Email",
     "message": "Tin nhắn",
-    "send": "Gửi tin nhắn",
-    "sending": "Đang gửi...",
-    "success": "Tin nhắn đã được gửi thành công!",
+    "send": "Mở email để gửi",
     "name_placeholder": "Nhập họ tên của bạn",
     "email_placeholder": "Nhập địa chỉ email",
     "message_placeholder": "Mô tả dự án hoặc tin nhắn của bạn..."
+  },
+  "links": {
+    "subtitle": "Kết nối",
+    "title": "Liên kết khác",
+    "description": "Ghé thăm mình ở những nơi khác trên mạng",
+    "github": "GitHub",
+    "github_desc": "Theo dõi các dự án và đóng góp mã nguồn mở",
+    "linkedin": "LinkedIn",
+    "linkedin_desc": "Kết nối và xem quá trình làm việc",
+    "email": "Email",
+    "email_desc": "Cách nhanh nhất để liên hệ trực tiếp"
   },
   "footer": {
     "rights": "Tất cả quyền được bảo lưu.",

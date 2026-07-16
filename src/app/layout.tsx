@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { LanguageProvider } from "@/context/LanguageContext";
+import { cn } from "@/lib/utils";
 
-const montserrat = Montserrat({
-    variable: "--font-montserrat",
+const inter = Inter({
+    variable: "--font-sans",
     subsets: ["latin", "vietnamese"],
-    weight: ["300", "400", "500", "600", "700", "800", "900"],
+    weight: ["400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
-    title: "Portfolio | Nguyen Huu Tan",
-    description: "Full-Stack Developer Portfolio - Building beautiful and performant web experiences.",
+    title: "Nguyen Huu Tan — Frontend & Mobile Developer",
+    description: "Portfolio của Nguyen Huu Tan (Tronie Nguyen) — Frontend & Mobile Developer xây dựng giao diện web/app rõ ràng, hiệu suất cao.",
 };
 
 export default function RootLayout({
@@ -21,7 +22,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="vi" className={`${montserrat.variable} h-full antialiased`} suppressHydrationWarning>
+        <html lang="vi" className={cn("h-full", "antialiased", inter.variable, "font-sans")} suppressHydrationWarning>
             <body className="min-h-full flex flex-col">
                 <ThemeProvider>
                     <LanguageProvider>{children}</LanguageProvider>
