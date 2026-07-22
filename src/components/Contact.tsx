@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Meteors } from "@/components/ui/meteors";
 
 const CONTACT_EMAIL = "nhtan5544@gmail.com";
 
@@ -41,15 +42,12 @@ export default function Contact() {
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="mb-10 sm:mb-12 lg:mb-16 text-center"
+          className="mb-10 sm:mb-12 border-b border-border/60 pb-4 text-left"
         >
-          <p className="text-xs font-semibold text-accent-foreground uppercase tracking-widest mb-2">
-            {t("contact.subtitle")}
-          </p>
-          <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground mb-2">
             {t("contact.title")}
           </h2>
-          <p className="text-muted-foreground max-w-lg mx-auto">{t("contact.description")}</p>
+          <p className="text-muted-foreground max-w-lg">{t("contact.description")}</p>
         </motion.div>
 
         <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
@@ -87,8 +85,9 @@ export default function Contact() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="lg:col-span-3"
           >
-            <Card>
-              <CardContent>
+            <Card className="relative overflow-hidden border-border/80 bg-card/80 backdrop-blur-sm shadow-xl">
+              <Meteors number={25} />
+              <CardContent className="relative z-10">
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div className="space-y-2">

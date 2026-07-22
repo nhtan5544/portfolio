@@ -5,6 +5,10 @@ import Image from "next/image";
 import { ArrowDown, ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { Button } from "@/components/ui/button";
+import { BorderBeam } from "@/components/ui/border-beam";
+import { ShimmerButton } from "@/components/ui/shimmer-button";
+import { WordRotate } from "@/components/ui/word-rotate";
+import { NumberTicker } from "@/components/ui/number-ticker";
 
 const socialLinks = [
   { icon: Github, href: "https://github.com/nhtan5544", label: "GitHub" },
@@ -45,106 +49,168 @@ export default function Hero() {
         className="absolute inset-0 bg-[radial-gradient(circle,transparent_35%,var(--background)_100%)]"
       />
 
-      <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center flex flex-col items-center">
-        <motion.div
-          initial={{ opacity: 0, y: -10, scale: 0.9 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border-2 border-border shadow-lg mb-6"
-        >
-          <Image
-            src="/IMG_7719.jpg"
-            alt="Nguyen Huu Tan"
-            fill
-            sizes="128px"
-            className="object-cover object-bottom"
-            priority
-          />
-        </motion.div>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground mb-3"
-        >
-          {t("hero.greeting")} <span className="gradient-text">{t("hero.name")}</span>
-        </motion.h1>
-
-        <motion.h2
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.18 }}
-          className="text-lg sm:text-xl font-medium text-muted-foreground mb-4"
-        >
-          {t("hero.title")}
-        </motion.h2>
-
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.24 }}
-          className="text-base text-muted-foreground max-w-xl leading-relaxed mb-8"
-        >
-          {t("hero.subtitle")}
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex flex-wrap items-center justify-center gap-2 mb-8"
-        >
-          {quickLinks.map((link) => (
-            <button
-              key={link.key}
-              onClick={() => handleScroll(link.href)}
-              className="px-4 py-1.5 rounded-full border border-border bg-card/60 backdrop-blur-sm text-sm text-muted-foreground hover:text-foreground hover:border-primary/40 transition-colors"
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          {/* Left Column — Content & Actions */}
+          <div className="lg:col-span-7 text-left flex flex-col items-start">
+            {/* Quick links tag strip */}
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="flex flex-wrap items-center gap-2 mb-6"
             >
-              {t(link.key)}
-            </button>
-          ))}
-        </motion.div>
+              {quickLinks.map((link) => (
+                <button
+                  key={link.key}
+                  onClick={() => handleScroll(link.href)}
+                  className="px-3.5 py-1 rounded-full border border-border bg-card/60 backdrop-blur-sm text-xs font-medium text-muted-foreground hover:text-foreground hover:border-primary/40 transition-colors"
+                >
+                  {t(link.key)}
+                </button>
+              ))}
+            </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.36 }}
-          className="flex flex-wrap items-center justify-center gap-4 mb-8"
-        >
-          <Button size="lg" className="h-11 px-6 rounded-full" onClick={() => handleScroll("#projects")}>
-            {t("hero.cta_primary")}
-            <ArrowRight className="size-4" />
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="h-11 px-6 rounded-full"
-            onClick={() => handleScroll("#contact")}
-          >
-            {t("hero.cta_secondary")}
-          </Button>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.42 }}
-          className="flex items-center justify-center gap-3"
-        >
-          {socialLinks.map(({ icon: Icon, href, label }) => (
-            <a
-              key={label}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={label}
-              className="p-2.5 rounded-full border border-border text-muted-foreground hover:text-accent-foreground hover:border-primary/40 transition-colors"
+            <motion.h1
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground mb-1 leading-tight"
             >
-              <Icon size={17} />
-            </a>
-          ))}
-        </motion.div>
+              {t("hero.greeting")} <span className="gradient-text">{t("hero.name")}</span>
+            </motion.h1>
+
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.18 }}
+              className="flex items-center gap-2 mb-3 min-h-[36px]"
+            >
+              <span className="text-lg sm:text-xl font-semibold text-muted-foreground">I am a</span>
+              <WordRotate
+                words={["Frontend Developer", "React Native Engineer", "UI/UX Craftsman", "Fullstack Developer"]}
+                className="text-lg sm:text-xl font-bold text-primary gradient-text"
+              />
+            </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.24 }}
+              className="text-base text-muted-foreground max-w-xl leading-relaxed mb-6"
+            >
+              {t("hero.subtitle")}
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="flex flex-wrap items-center gap-4 mb-6"
+            >
+              <ShimmerButton
+                className="h-11 px-6 text-sm font-semibold rounded-full shadow-lg"
+                onClick={() => handleScroll("#projects")}
+              >
+                <span className="flex items-center gap-2 text-white dark:text-white">
+                  {t("hero.cta_primary")}
+                  <ArrowRight className="size-4" />
+                </span>
+              </ShimmerButton>
+              <Button
+                size="lg"
+                variant="outline"
+                className="h-11 px-6 rounded-full"
+                onClick={() => handleScroll("#contact")}
+              >
+                {t("hero.cta_secondary")}
+              </Button>
+            </motion.div>
+
+            {/* NumberTicker Stats */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.35 }}
+              className="grid grid-cols-3 gap-4 py-3 border-y border-border/60 w-full max-w-lg mb-6"
+            >
+              <div>
+                <p className="text-2xl sm:text-3xl font-extrabold text-foreground font-mono flex items-center">
+                  <NumberTicker value={3} className="text-foreground" />+
+                </p>
+                <p className="text-xs text-muted-foreground font-medium">Years Experience</p>
+              </div>
+              <div>
+                <p className="text-2xl sm:text-3xl font-extrabold text-foreground font-mono flex items-center">
+                  <NumberTicker value={12} className="text-foreground" />+
+                </p>
+                <p className="text-xs text-muted-foreground font-medium">Projects Completed</p>
+              </div>
+              <div>
+                <p className="text-2xl sm:text-3xl font-extrabold text-foreground font-mono flex items-center">
+                  <NumberTicker value={100} className="text-foreground" />%
+                </p>
+                <p className="text-xs text-muted-foreground font-medium">Commitment</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.36 }}
+              className="flex items-center gap-3"
+            >
+              <span className="text-xs font-medium text-muted-foreground mr-1">Connect:</span>
+              {socialLinks.map(({ icon: Icon, href, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="p-2.5 rounded-full border border-border text-muted-foreground hover:text-accent-foreground hover:border-primary/40 transition-colors"
+                >
+                  <Icon size={17} />
+                </a>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* Right Column — Visual Avatar Card */}
+          <div className="lg:col-span-5 flex justify-center lg:justify-end mt-8 lg:mt-0">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="relative group max-w-xs sm:max-w-sm w-full"
+            >
+              <div className="absolute -inset-1 rounded-3xl bg-linear-to-r from-primary/30 to-purple-600/30 blur-xl opacity-70 group-hover:opacity-100 transition duration-500" />
+              <div className="relative p-3 bg-card border border-border rounded-2xl shadow-xl overflow-hidden">
+                <BorderBeam size={200} duration={12} delay={9} colorFrom="#8b5cf6" colorTo="#ec4899" />
+                <div className="relative w-full aspect-4/5 rounded-xl overflow-hidden border border-border/50">
+                  <Image
+                    src="/IMG_7719.jpg"
+                    alt="Nguyen Huu Tan - Frontend & Mobile Developer Portfolio Avatar"
+                    fill
+                    sizes="(min-width: 1024px) 400px, 300px"
+                    className="object-cover object-bottom transform group-hover:scale-105 transition duration-500"
+                    priority
+                  />
+                </div>
+                <div className="pt-3 pb-1 px-1 flex items-center justify-between">
+                  <div>
+                    <p className="text-xs font-bold text-foreground">Nguyen Huu Tan</p>
+                    <p className="text-[11px] text-muted-foreground">Frontend & Mobile Dev</p>
+                  </div>
+                  <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-[11px] font-semibold">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    Available
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
       </div>
 
       <motion.button

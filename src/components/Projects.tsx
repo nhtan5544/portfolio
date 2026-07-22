@@ -7,6 +7,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { BorderBeam } from "@/components/ui/border-beam";
 import { cn } from "@/lib/utils";
 
 // TODO(nhtan5544): đây là danh sách dự án kế thừa từ bản nháp — mã nguồn đang
@@ -102,84 +103,89 @@ export default function Projects() {
         <section id="projects" className="py-16 sm:py-20 lg:py-24 relative">
             <div ref={ref} className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
-                    initial={{ opacity: 0, y: 24 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.6 }}
-                    className="mb-10 sm:mb-12 lg:mb-16 text-center"
-                >
-                    <p className="text-xs font-semibold text-accent-foreground uppercase tracking-widest mb-2">
-                        {t("projects.subtitle")}
-                    </p>
-                    <h2 className="text-4xl sm:text-5xl font-bold text-foreground">{t("projects.title")}</h2>
-                </motion.div>
+          initial={{ opacity: 0, y: 24 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="mb-10 sm:mb-12 flex items-baseline justify-between border-b border-border/60 pb-4 text-left"
+        >
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground">
+            {t("projects.title")}
+          </h2>
+        </motion.div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {projectsData.map((project, i) => (
-                        <motion.div
-                            key={project.title}
-                            className="flex h-full flex-col"
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={isInView ? { opacity: 1, y: 0 } : {}}
-                            transition={{ duration: 0.5, delay: i * 0.08 }}
-                        >
-                            <div className="mb-3 flex items-center gap-2 text-xs font-mono text-muted-foreground">
-                                <span>{String(i + 1).padStart(2, "0")}</span>
-                                <span className="h-px w-6 bg-border" />
-                                <span className="tracking-widest">{project.category}</span>
-                            </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-12 gap-6">
+          {projectsData.map((project, i) => (
+            <motion.div
+              key={project.title}
+              className={cn(
+                "flex h-full flex-col",
+                project.featured ? "lg:col-span-6" : "lg:col-span-4"
+              )}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+            >
+              <div className="mb-3 flex items-center gap-2 text-xs font-mono text-muted-foreground">
+                <span>{String(i + 1).padStart(2, "0")}</span>
+                <span className="h-px w-6 bg-border" />
+                <span className="tracking-widest">{project.category}</span>
+              </div>
 
-                            <Card className="flex-1 py-0 gap-0 overflow-hidden border-border/80">
-                                <div className={cn("relative h-40 flex flex-col p-4 bg-linear-to-br", project.gradient)}>
-                                    <div className="flex items-center gap-1.5">
-                                        <span className="w-2.5 h-2.5 rounded-full bg-white/70" />
-                                        <span className="w-2.5 h-2.5 rounded-full bg-white/50" />
-                                        <span className="w-2.5 h-2.5 rounded-full bg-white/30" />
-                                    </div>
-                                    <div className="flex-1 flex items-center justify-center">
-                                        <project.icon className="size-10 text-white/90" strokeWidth={1.5} />
-                                    </div>
-                                    {project.featured && (
-                                        <Badge className="absolute top-3 right-3 gap-1 bg-white/90 text-neutral-900 hover:bg-white/90">
-                                            <Star size={10} fill="currentColor" />
-                                            {t("projects.featured")}
-                                        </Badge>
-                                    )}
-                                </div>
-
-                                <CardContent className="pt-5 flex flex-col gap-4">
-                                    <div>
-                                        <h3 className="text-base font-bold text-foreground mb-1.5">{project.title}</h3>
-                                        <p className="text-sm text-muted-foreground leading-relaxed">
-                                            {project.description[locale as "vi" | "en"]}
-                                        </p>
-                                    </div>
-
-                                    <div className="flex flex-wrap gap-1.5">
-                                        {project.tags.map((tag) => (
-                                            <Badge key={tag} variant="secondary" className="font-normal">
-                                                {tag}
-                                            </Badge>
-                                        ))}
-                                    </div>
-
-                                    <div className="flex items-center gap-2 mt-1">
-                                        {project.demo && (
-                                            <Button
-                                                size="sm"
-                                                className="flex-1 rounded-full"
-                                                nativeButton={false}
-                                                render={<a href={project.demo} target="_blank" rel="noopener noreferrer" />}
-                                            >
-                                                <ExternalLink className="size-3.5" />
-                                                {t("projects.view_demo")}
-                                            </Button>
-                                        )}
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        </motion.div>
-                    ))}
+              <Card className="relative flex-1 py-0 gap-0 overflow-hidden border-border/80 hover:border-primary/50 transition-colors duration-300">
+                {project.featured && (
+                  <BorderBeam size={200} duration={12} delay={i * 3} colorFrom="#6366f1" colorTo="#ec4899" />
+                )}
+                <div className={cn("relative flex flex-col p-4 bg-linear-to-br", project.featured ? "h-48" : "h-40", project.gradient)}>
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-2.5 h-2.5 rounded-full bg-white/70" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-white/50" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-white/30" />
+                  </div>
+                  <div className="flex-1 flex items-center justify-center">
+                    <project.icon className={cn("text-white/90", project.featured ? "size-12" : "size-10")} strokeWidth={1.5} />
+                  </div>
+                  {project.featured && (
+                    <Badge className="absolute top-3 right-3 gap-1 bg-white/90 text-neutral-900 hover:bg-white/90">
+                      <Star size={10} fill="currentColor" />
+                      {t("projects.featured")}
+                    </Badge>
+                  )}
                 </div>
+
+                <CardContent className="pt-5 flex flex-col gap-4">
+                  <div>
+                    <h3 className="text-base font-bold text-foreground mb-1.5">{project.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {project.description[locale as "vi" | "en"]}
+                    </p>
+                  </div>
+
+                  <div className="flex flex-wrap gap-1.5 mt-auto">
+                    {project.tags.map((tag) => (
+                      <Badge key={tag} variant="secondary" className="font-normal">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+
+                  {project.demo && (
+                    <div className="flex items-center gap-2 mt-1">
+                      <Button
+                        size="sm"
+                        className="flex-1 rounded-full"
+                        nativeButton={false}
+                        render={<a href={project.demo} target="_blank" rel="noopener noreferrer" />}
+                      >
+                        <ExternalLink className="size-3.5" />
+                        {t("projects.view_demo")}
+                      </Button>
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
             </div>
         </section>
     );

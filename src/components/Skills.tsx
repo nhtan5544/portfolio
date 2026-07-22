@@ -5,7 +5,8 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { Badge } from "@/components/ui/badge";
-import { skillsData, type SkillCategory } from "@/lib/skills-data";
+import { Marquee } from "@/components/ui/marquee";
+import { skillsData, allSkills, type SkillCategory } from "@/lib/skills-data";
 
 const SkillsGlobe = dynamic(() => import("./SkillsGlobe"), {
   ssr: false,
@@ -30,19 +31,36 @@ export default function Skills() {
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="mb-6 text-center"
+          className="mb-8 flex items-baseline justify-between border-b border-border/60 pb-4"
         >
-          <p className="text-xs font-semibold text-accent-foreground uppercase tracking-widest mb-2">
-            {t("skills.subtitle")}
-          </p>
-          <h2 className="text-4xl sm:text-5xl font-bold text-foreground">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground">
             {t("skills.title")}
           </h2>
         </motion.div>
 
         <SkillsGlobe />
 
-        <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 mt-4">
+        {/* Marquee Tech Stack Banner */}
+        <div className="relative flex flex-col items-center justify-center overflow-hidden rounded-xl border border-border/60 bg-card/40 py-3 my-6 backdrop-blur-xs">
+          <Marquee pauseOnHover className="[--duration:30s]">
+            {allSkills.map((skill) => {
+              const Icon = skill.icon;
+              return (
+                <div
+                  key={skill.name}
+                  className="flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-border/70 bg-background/80 text-xs font-semibold text-foreground shadow-xs hover:border-primary/50 transition-colors"
+                >
+                  <Icon style={{ color: skill.color }} className="size-4" />
+                  <span>{skill.name}</span>
+                </div>
+              );
+            })}
+          </Marquee>
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-1/12 bg-gradient-to-r from-background to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-1/12 bg-gradient-to-l from-background to-transparent" />
+        </div>
+
+        <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 mt-6">
           {categoryKeys.map((category) => (
             <div key={category} className="flex flex-col items-center gap-2 max-w-xs">
               <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
@@ -62,3 +80,4 @@ export default function Skills() {
     </section>
   );
 }
+
