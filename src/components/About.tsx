@@ -19,6 +19,8 @@ const focusAreas = [
   { icon: Palette, key: "about.focus.uiux" },
 ];
 
+import { MagicCard } from "@/components/ui/magic-card";
+
 function BentoCard({
   className,
   delay,
@@ -37,9 +39,14 @@ function BentoCard({
       transition={{ duration: 0.5, delay }}
       className={className}
     >
-      <Card className="h-full border-border/80 bg-card/60 backdrop-blur-sm">
-        <CardContent className="h-full flex flex-col">{children}</CardContent>
-      </Card>
+      <MagicCard
+        gradientColor="#8b5cf620"
+        gradientFrom="#8b5cf6"
+        gradientTo="#ec4899"
+        className="h-full border-border/80 bg-card/60 backdrop-blur-sm p-6"
+      >
+        <div className="h-full flex flex-col">{children}</div>
+      </MagicCard>
     </motion.div>
   );
 }
@@ -56,12 +63,9 @@ export default function About() {
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="mb-10 sm:mb-12 lg:mb-16 text-center"
+          className="mb-10 sm:mb-12 flex items-baseline justify-between border-b border-border/60 pb-4"
         >
-          <p className="text-xs font-semibold text-accent-foreground uppercase tracking-widest mb-2">
-            {t("about.subtitle")}
-          </p>
-          <h2 className="text-4xl sm:text-5xl font-bold text-foreground">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground">
             {t("about.title")}
           </h2>
         </motion.div>
@@ -87,7 +91,7 @@ export default function About() {
             <div className="relative w-full h-full min-h-55 rounded-[calc(var(--radius)-1px)] overflow-hidden">
               <Image
                 src="/IMG_7719.jpg"
-                alt="Nguyen Huu Tan"
+                alt="Nguyen Huu Tan - Software Developer based in Ho Chi Minh City"
                 fill
                 sizes="(min-width: 768px) 25vw, 90vw"
                 className="object-cover object-bottom"
