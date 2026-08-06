@@ -4,7 +4,11 @@
     "about": "About",
     "skills": "Skills",
     "projects": "Projects",
-    "contact": "Contact"
+    "contact": "Contact",
+    "menu": "Menu",
+    "toggle_theme": "Toggle theme",
+    "switch_language": "Switch language",
+    "open_menu": "Open menu"
   },
   "hero": {
     "greeting": "Hi, I'm",
@@ -15,6 +19,15 @@
     "cta_primary": "View Projects",
     "cta_secondary": "Get in Touch",
     "scroll": "Scroll down",
+    "i_am_a": "I am a",
+    "connect": "Connect:",
+    "available": "Available",
+    "avatar_alt": "Nguyen Huu Tan — Frontend & Mobile Developer portfolio portrait",
+    "stats": {
+      "experience": "Years Experience",
+      "projects": "Projects Completed",
+      "commitment": "Commitment"
+    },
     "quick": {
       "projects": "Projects",
       "about": "About",
@@ -23,26 +36,29 @@
     }
   },
   "about": {
-    "title": "About",
+    "title": "About Nguyen Huu Tan",
     "subtitle": "About Me",
     "mindset_title": "How I Work",
     "craft_title": "Craft",
     "description1": "I'm Nguyen Huu Tan (Tronie Nguyen) — a Frontend & Mobile Developer focused on building clear, smooth, performance-minded interfaces for both web and mobile apps.",
     "description2": "I work mainly with React, Next.js and React Native, with close attention to UI/UX detail, accessibility, and maintainable code. Always open to new challenges.",
+    "photo_alt": "Nguyen Huu Tan — software developer based in Ho Chi Minh City",
     "focus": {
       "web": "Frontend Web",
       "mobile": "Mobile App",
       "uiux": "UI/UX Craft"
     },
     "info": {
-      "location": "Location"
+      "location": "Location",
+      "location_value": "Ho Chi Minh City, Vietnam"
     },
     "open": "Open to collaborate",
     "cv_hint": "No public CV yet",
-    "cv": "Request CV by email"
+    "cv": "Request CV by email",
+    "cv_subject": "CV request"
   },
   "skills": {
-    "title": "Skills",
+    "title": "Skills & Technologies",
     "subtitle": "Technologies I work with",
     "categories": {
       "core": "Languages & Core",
@@ -51,14 +67,14 @@
     }
   },
   "projects": {
-    "title": "Projects",
+    "title": "Featured Projects",
     "subtitle": "What I've built",
     "view_demo": "View Demo",
     "private": "Private source",
     "featured": "Featured"
   },
   "contact": {
-    "title": "Contact",
+    "title": "Get in Touch",
     "subtitle": "Let's work together",
     "description": "Have an interesting project? Reach out, I'd love to collaborate!",
     "name": "Full Name",
@@ -67,11 +83,18 @@
     "send": "Open email to send",
     "name_placeholder": "Enter your full name",
     "email_placeholder": "Enter your email address",
-    "message_placeholder": "Describe your project or message..."
+    "message_placeholder": "Describe your project or message...",
+    "mail_subject": "Message from",
+    "info": {
+      "email_label": "Email",
+      "location_label": "Location",
+      "location_value": "Ho Chi Minh City, Vietnam",
+      "phone_label": "Phone"
+    }
   },
   "links": {
     "subtitle": "Connect",
-    "title": "More Links",
+    "title": "Connect With Me",
     "description": "Find me across the web",
     "github": "GitHub",
     "github_desc": "Follow my projects and open-source contributions",

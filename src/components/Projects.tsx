@@ -131,7 +131,9 @@ export default function Projects() {
                 <span className="tracking-widest">{project.category}</span>
               </div>
 
-              <Card className="relative flex-1 py-0 gap-0 overflow-hidden border-border/80 hover:border-primary/50 transition-colors duration-300">
+              {/* Card draws its edge with `ring-1`, not a border, so the hover accent has to
+                  be a ring — and `transition-shadow`, since the ring is a box-shadow. */}
+              <Card className="relative flex-1 py-0 gap-0 overflow-hidden hover:ring-primary/50 transition-shadow duration-300">
                 {project.featured && (
                   <BorderBeam size={200} duration={12} delay={i * 3} colorFrom="#6366f1" colorTo="#ec4899" />
                 )}
@@ -152,7 +154,7 @@ export default function Projects() {
                   )}
                 </div>
 
-                <CardContent className="pt-5 flex flex-col gap-4">
+                <CardContent className="pt-5 pb-5 flex flex-col gap-4">
                   <div>
                     <h3 className="text-base font-bold text-foreground mb-1.5">{project.title}</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">

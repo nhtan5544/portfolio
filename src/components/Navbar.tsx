@@ -65,7 +65,7 @@ export default function Navbar() {
             size="icon"
             className="rounded-full"
             onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-            aria-label="Toggle theme"
+            aria-label={t("nav.toggle_theme")}
           >
             <Sun className="size-4 dark:hidden" />
             <Moon className="size-4 hidden dark:block" />
@@ -75,7 +75,7 @@ export default function Navbar() {
             size="icon"
             className="rounded-full text-xs font-bold"
             onClick={toggleLocale}
-            aria-label={`Switch language (current: ${locale === "vi" ? "Vietnamese" : "English"})`}
+            aria-label={`${t("nav.switch_language")} (${locale === "vi" ? "Tiếng Việt" : "English"})`}
           >
             <Languages className="size-4" />
           </Button>
@@ -129,7 +129,7 @@ export default function Navbar() {
                   variant="ghost"
                   size="icon"
                   className="md:hidden rounded-full border border-border bg-card/80 backdrop-blur-xl shadow-sm"
-                  aria-label="Open menu"
+                  aria-label={t("nav.open_menu")}
                 >
                   <Menu className="size-4" />
                 </Button>
@@ -137,7 +137,7 @@ export default function Navbar() {
             />
             <SheetContent side="right">
               <SheetHeader>
-                <SheetTitle>Menu</SheetTitle>
+                <SheetTitle>{t("nav.menu")}</SheetTitle>
               </SheetHeader>
               <div className="flex flex-col gap-1 px-4">
                 {navLinks.map((link) => {

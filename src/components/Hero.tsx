@@ -71,9 +71,11 @@ export default function Hero() {
               ))}
             </motion.div>
 
+            {/* Transform-only animation: an `opacity: 0` initial state would ship the LCP
+                heading hidden in the prerendered HTML. */}
             <motion.h1
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ y: 16 }}
+              animate={{ y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground mb-1 leading-tight"
             >
@@ -86,7 +88,9 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.18 }}
               className="flex items-center gap-2 mb-3 min-h-[36px]"
             >
-              <span className="text-lg sm:text-xl font-semibold text-muted-foreground">I am a</span>
+              <span className="text-lg sm:text-xl font-semibold text-muted-foreground">
+                {t("hero.i_am_a")}
+              </span>
               <WordRotate
                 words={["Frontend Developer", "React Native Engineer", "UI/UX Craftsman", "Fullstack Developer"]}
                 className="text-lg sm:text-xl font-bold text-primary gradient-text"
@@ -94,8 +98,8 @@ export default function Hero() {
             </motion.div>
 
             <motion.p
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ y: 12 }}
+              animate={{ y: 0 }}
               transition={{ duration: 0.5, delay: 0.24 }}
               className="text-base text-muted-foreground max-w-xl leading-relaxed mb-6"
             >
@@ -138,19 +142,19 @@ export default function Hero() {
                 <p className="text-2xl sm:text-3xl font-extrabold text-foreground font-mono flex items-center">
                   <NumberTicker value={3} className="text-foreground" />+
                 </p>
-                <p className="text-xs text-muted-foreground font-medium">Years Experience</p>
+                <p className="text-xs text-muted-foreground font-medium">{t("hero.stats.experience")}</p>
               </div>
               <div>
                 <p className="text-2xl sm:text-3xl font-extrabold text-foreground font-mono flex items-center">
                   <NumberTicker value={12} className="text-foreground" />+
                 </p>
-                <p className="text-xs text-muted-foreground font-medium">Projects Completed</p>
+                <p className="text-xs text-muted-foreground font-medium">{t("hero.stats.projects")}</p>
               </div>
               <div>
                 <p className="text-2xl sm:text-3xl font-extrabold text-foreground font-mono flex items-center">
                   <NumberTicker value={100} className="text-foreground" />%
                 </p>
-                <p className="text-xs text-muted-foreground font-medium">Commitment</p>
+                <p className="text-xs text-muted-foreground font-medium">{t("hero.stats.commitment")}</p>
               </div>
             </motion.div>
 
@@ -160,7 +164,7 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.36 }}
               className="flex items-center gap-3"
             >
-              <span className="text-xs font-medium text-muted-foreground mr-1">Connect:</span>
+              <span className="text-xs font-medium text-muted-foreground mr-1">{t("hero.connect")}</span>
               {socialLinks.map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
@@ -190,7 +194,7 @@ export default function Hero() {
                 <div className="relative w-full aspect-4/5 rounded-xl overflow-hidden border border-border/50">
                   <Image
                     src="/IMG_7719.jpg"
-                    alt="Nguyen Huu Tan - Frontend & Mobile Developer Portfolio Avatar"
+                    alt={t("hero.avatar_alt")}
                     fill
                     sizes="(min-width: 1024px) 400px, 300px"
                     className="object-cover object-bottom transform group-hover:scale-105 transition duration-500"
@@ -199,12 +203,12 @@ export default function Hero() {
                 </div>
                 <div className="pt-3 pb-1 px-1 flex items-center justify-between">
                   <div>
-                    <p className="text-xs font-bold text-foreground">Nguyen Huu Tan</p>
+                    <p className="text-xs font-bold text-foreground">{t("hero.name")}</p>
                     <p className="text-[11px] text-muted-foreground">Frontend & Mobile Dev</p>
                   </div>
                   <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-[11px] font-semibold">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                    Available
+                    {t("hero.available")}
                   </div>
                 </div>
               </div>
