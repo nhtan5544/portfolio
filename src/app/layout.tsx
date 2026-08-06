@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   keywords: [
     "Nguyen Huu Tan",
     // The diacritic spelling is a distinct Vietnamese search term from the plain one.
-    "Nguyễn Hữu Tân",
+    "Nguyễn Hữu Tấn",
     "Tronie Nguyen",
     "Frontend Developer",
     "Mobile Developer",

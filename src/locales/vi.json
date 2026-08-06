@@ -12,7 +12,7 @@
   },
   "hero": {
     "greeting": "Xin chào, mình là",
-    "name": "Nguyen Huu Tan",
+    "name": "Nguyễn Hữu Tấn",
     "nameAlt": "Tronie Nguyen",
     "title": "Frontend & Mobile Developer",
     "subtitle": "Mình xây dựng giao diện web và ứng dụng di động rõ ràng, mượt mà và tối ưu hiệu suất.",
@@ -22,7 +22,7 @@
     "i_am_a": "Mình là",
     "connect": "Kết nối:",
     "available": "Sẵn sàng",
-    "avatar_alt": "Nguyen Huu Tan — Frontend & Mobile Developer, ảnh chân dung portfolio",
+    "avatar_alt": "Nguyễn Hữu Tấn — Frontend & Mobile Developer, ảnh chân dung portfolio",
     "stats": {
       "experience": "Năm kinh nghiệm",
       "projects": "Dự án hoàn thành",
@@ -36,13 +36,13 @@
     }
   },
   "about": {
-    "title": "Giới thiệu về Nguyễn Hữu Tân",
+    "title": "Giới thiệu về Nguyễn Hữu Tấn",
     "subtitle": "Về mình",
     "mindset_title": "Cách làm việc",
     "craft_title": "Chuyên môn",
-    "description1": "Mình là Nguyen Huu Tan (Tronie Nguyen) — Frontend & Mobile Developer, tập trung xây dựng giao diện rõ ràng, mượt và tối ưu hiệu suất trên cả web lẫn ứng dụng di động.",
+    "description1": "Mình là Nguyễn Hữu Tấn (Tronie Nguyen) — Frontend & Mobile Developer, tập trung xây dựng giao diện rõ ràng, mượt và tối ưu hiệu suất trên cả web lẫn ứng dụng di động.",
     "description2": "Mình làm việc chủ yếu với React, Next.js và React Native, chú trọng chi tiết UI/UX, khả năng truy cập (accessibility) và code dễ bảo trì. Luôn sẵn sàng đón nhận thử thách mới.",
-    "photo_alt": "Nguyen Huu Tan — lập trình viên phần mềm tại Thành phố Hồ Chí Minh",
+    "photo_alt": "Nguyễn Hữu Tấn — lập trình viên phần mềm tại Thành phố Hồ Chí Minh",
     "focus": {
       "web": "Frontend Web",
       "mobile": "Mobile App",

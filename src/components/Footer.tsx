@@ -29,7 +29,7 @@ export default function Footer() {
                     <p className="flex items-center gap-2">
                         <span className="font-bold text-foreground">NT</span>
                         <span className="text-border">·</span>
-                        © {year} Nguyen Huu Tan. {t("footer.rights")}
+                        © {year} {t("hero.name")}. {t("footer.rights")}
                     </p>
                     <div className="flex items-center gap-3">
                         {socialLinks.map(({ icon: Icon, href, label }) => (
