@@ -1,12 +1,16 @@
+const siteUrl = "https://portfolio-nhtan5544.vercel.app";
+
 export default function JsonLd() {
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": `${siteUrl}#person`,
     name: "Nguyen Huu Tan",
-    alternateName: ["Tronie Nguyen", "nhtan5544"],
+    alternateName: ["Nguyễn Hữu Tân", "Tronie Nguyen", "nhtan5544"],
     jobTitle: "Frontend & Mobile Developer",
-    url: "https://portfolio-nhtan5544.vercel.app",
-    image: "https://portfolio-nhtan5544.vercel.app/IMG_7719.jpg",
+    knowsLanguage: ["vi", "en"],
+    url: siteUrl,
+    image: `${siteUrl}/IMG_7719.jpg`,
     email: "nhtan5544@gmail.com",
     telephone: "+84393930709",
     address: {
@@ -14,10 +18,7 @@ export default function JsonLd() {
       addressLocality: "Ho Chi Minh City",
       addressCountry: "Vietnam",
     },
-    sameAs: [
-      "https://github.com/nhtan5544",
-      "https://www.linkedin.com/in/tan-nguyen-huu-0ab0721b1/",
-    ],
+    sameAs: ["https://github.com/nhtan5544", "https://www.linkedin.com/in/tan-nguyen-huu-0ab0721b1/"],
     knowsAbout: [
       "JavaScript",
       "TypeScript",
@@ -32,15 +33,17 @@ export default function JsonLd() {
     ],
   };
 
+  // `@id` cross-references let search engines resolve the site and the person as one
+  // entity instead of two unrelated nodes.
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": `${siteUrl}#website`,
     name: "Nguyen Huu Tan Portfolio",
-    url: "https://portfolio-nhtan5544.vercel.app",
-    author: {
-      "@type": "Person",
-      name: "Nguyen Huu Tan",
-    },
+    url: siteUrl,
+    inLanguage: "vi-VN",
+    author: { "@id": `${siteUrl}#person` },
+    publisher: { "@id": `${siteUrl}#person` },
   };
 
   return (

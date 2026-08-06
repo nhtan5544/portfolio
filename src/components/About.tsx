@@ -8,6 +8,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 // TODO(nhtan5544): mảng công nghệ dưới đây kế thừa từ danh sách kỹ năng —
 // chỉnh lại nếu bộ công nghệ hiện tại đang dùng khác đi.
@@ -21,13 +22,20 @@ const focusAreas = [
 
 import { MagicCard } from "@/components/ui/magic-card";
 
+// `className` positions the card in the grid and belongs on the animation wrapper.
+// Padding lives on the MagicCard surface and alignment on the inner flex box, so both
+// need their own prop — passing either through `className` silently does nothing.
 function BentoCard({
   className,
+  surfaceClassName,
+  contentClassName,
   delay,
   isInView,
   children,
 }: {
   className?: string;
+  surfaceClassName?: string;
+  contentClassName?: string;
   delay: number;
   isInView: boolean;
   children: React.ReactNode;
@@ -43,9 +51,12 @@ function BentoCard({
         gradientColor="#8b5cf620"
         gradientFrom="#8b5cf6"
         gradientTo="#ec4899"
-        className="h-full border-border/80 bg-card/60 backdrop-blur-sm p-6"
+        className={cn(
+          "h-full border-border/80 bg-card/60 backdrop-blur-sm p-6",
+          surfaceClassName
+        )}
       >
-        <div className="h-full flex flex-col">{children}</div>
+        <div className={cn("h-full flex flex-col", contentClassName)}>{children}</div>
       </MagicCard>
     </motion.div>
   );
@@ -84,14 +95,15 @@ export default function About() {
 
           {/* Photo */}
           <BentoCard
-            className="col-span-2 md:col-span-1 md:row-span-2 p-0"
+            className="col-span-2 md:col-span-1 md:row-span-2"
+            surfaceClassName="p-0"
             delay={0.1}
             isInView={isInView}
           >
             <div className="relative w-full h-full min-h-55 rounded-[calc(var(--radius)-1px)] overflow-hidden">
               <Image
                 src="/IMG_7719.jpg"
-                alt="Nguyen Huu Tan - Software Developer based in Ho Chi Minh City"
+                alt={t("about.photo_alt")}
                 fill
                 sizes="(min-width: 768px) 25vw, 90vw"
                 className="object-cover object-bottom"
@@ -108,7 +120,7 @@ export default function About() {
               </span>
             </div>
             <p className="text-lg font-bold text-foreground leading-snug">
-              Ho Chi Minh City, Vietnam
+              {t("about.info.location_value")}
             </p>
             <p className="mt-auto pt-3 text-xs font-mono text-muted-foreground">
               10.8231° N, 106.6297° E — GMT+7
@@ -124,7 +136,12 @@ export default function About() {
           </BentoCard>
 
           {/* CV request */}
-          <BentoCard className="col-span-2 md:col-span-1 items-center justify-center text-center" delay={0.25} isInView={isInView}>
+          <BentoCard
+            className="col-span-2 md:col-span-1"
+            contentClassName="items-center justify-center text-center"
+            delay={0.25}
+            isInView={isInView}
+          >
             <Download className="size-6 text-accent-foreground mb-2" />
             <p className="text-sm text-muted-foreground mb-3">{t("about.cv_hint")}</p>
             <Button
@@ -132,7 +149,13 @@ export default function About() {
               variant="outline"
               className="rounded-full"
               nativeButton={false}
-              render={<a href="mailto:nhtan5544@gmail.com?subject=Y%C3%AAu%20c%E1%BA%A7u%20CV" />}
+              render={
+                <a
+                  href={`mailto:nhtan5544@gmail.com?subject=${encodeURIComponent(
+                    t("about.cv_subject")
+                  )}`}
+                />
+              }
             >
               <Mail className="size-3.5" />
               {t("about.cv")}

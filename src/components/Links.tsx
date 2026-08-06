@@ -62,7 +62,7 @@ export default function Links() {
               transition={{ duration: 0.4, delay: i * 0.08 }}
               className="group"
             >
-              <Card className="h-full transition-colors group-hover:border-primary/40">
+              <Card className="h-full [--card-spacing:--spacing(5)] transition-shadow group-hover:ring-primary/40">
                 <CardContent className="flex flex-col gap-3">
                   <div className="flex items-center justify-between">
                     <Icon className={`size-6 ${color}`} />
