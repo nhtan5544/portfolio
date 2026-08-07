@@ -2,7 +2,6 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import Image from "next/image";
 import { MapPin, Mail, Smartphone, Monitor, Palette, Download } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { Card, CardContent } from "@/components/ui/card";
@@ -10,9 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-// TODO(nhtan5544): mảng công nghệ dưới đây kế thừa từ danh sách kỹ năng —
-// chỉnh lại nếu bộ công nghệ hiện tại đang dùng khác đi.
-const currentTech = ["React", "Next.js", "React Native", "TypeScript", "Tailwind CSS"];
+const currentTech = ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS"];
 
 const focusAreas = [
   { icon: Monitor, key: "about.focus.web" },
@@ -45,7 +42,7 @@ function BentoCard({
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay }}
-      className={className}
+      className={cn("rounded-xl", className)}
     >
       <MagicCard
         gradientColor="#8b5cf620"
@@ -74,8 +71,11 @@ export default function About() {
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="mb-10 sm:mb-12 flex items-baseline justify-between border-b border-border/60 pb-4"
+          className="mb-10 sm:mb-12 border-b border-border/60 pb-4"
         >
+          <p className="text-xs font-semibold text-accent-foreground uppercase tracking-widest mb-2">
+            {t("about.subtitle")}
+          </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground">
             {t("about.title")}
           </h2>
@@ -93,26 +93,8 @@ export default function About() {
             </p>
           </BentoCard>
 
-          {/* Photo */}
-          <BentoCard
-            className="col-span-2 md:col-span-1 md:row-span-2"
-            surfaceClassName="p-0"
-            delay={0.1}
-            isInView={isInView}
-          >
-            <div className="relative w-full h-full min-h-55 rounded-[calc(var(--radius)-1px)] overflow-hidden">
-              <Image
-                src="/IMG_7719.jpg"
-                alt={t("about.photo_alt")}
-                fill
-                sizes="(min-width: 768px) 25vw, 90vw"
-                className="object-cover object-bottom"
-              />
-            </div>
-          </BentoCard>
-
           {/* Location */}
-          <BentoCard className="col-span-2 md:col-span-1" delay={0.15} isInView={isInView}>
+          <BentoCard className="col-span-2" delay={0.1} isInView={isInView}>
             <div className="flex items-center gap-2 text-accent-foreground mb-2">
               <MapPin className="size-4" />
               <span className="text-xs font-bold uppercase tracking-widest">
@@ -128,7 +110,7 @@ export default function About() {
           </BentoCard>
 
           {/* Bio 1 */}
-          <BentoCard className="col-span-2" delay={0.2} isInView={isInView}>
+          <BentoCard className="col-span-2 md:col-span-3" delay={0.15} isInView={isInView}>
             <p className="text-lg font-bold text-foreground mb-2">{t("about.mindset_title")}</p>
             <p className="text-sm text-muted-foreground leading-relaxed">
               {t("about.description1")}
@@ -138,11 +120,14 @@ export default function About() {
           {/* CV request */}
           <BentoCard
             className="col-span-2 md:col-span-1"
+            surfaceClassName="border-primary/40 bg-primary/[0.04]"
             contentClassName="items-center justify-center text-center"
-            delay={0.25}
+            delay={0.2}
             isInView={isInView}
           >
-            <Download className="size-6 text-accent-foreground mb-2" />
+            <div className="flex items-center justify-center size-10 rounded-full bg-primary/10 text-primary mb-2">
+              <Download className="size-5" />
+            </div>
             <p className="text-sm text-muted-foreground mb-3">{t("about.cv_hint")}</p>
             <Button
               size="sm"
@@ -163,7 +148,7 @@ export default function About() {
           </BentoCard>
 
           {/* Bio 2 + tech */}
-          <BentoCard className="col-span-2 md:col-span-4" delay={0.3} isInView={isInView}>
+          <BentoCard className="col-span-2 md:col-span-4" delay={0.25} isInView={isInView}>
             <p className="text-lg font-bold text-foreground mb-2">{t("about.craft_title")}</p>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">
               {t("about.description2")}

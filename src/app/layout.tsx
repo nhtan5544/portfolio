@@ -23,21 +23,19 @@ const siteUrl = "https://portfolio-nhtan5544.vercel.app";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Nguyen Huu Tan — Frontend & Mobile Developer Portfolio",
+    default: "Nguyen Huu Tan — Frontend Developer Portfolio",
     template: "%s | Nguyen Huu Tan Portfolio",
   },
   description:
-    "Portfolio cá nhân của Nguyen Huu Tan (Tronie Nguyen) — Frontend & Mobile Developer chuyên xây dựng giao diện Web/App ấn tượng, mượt mà và tối ưu hiệu suất tại TP. Hồ Chí Minh.",
+    "Portfolio cá nhân của Nguyen Huu Tan (Tronie Nguyen) — Frontend Developer với hơn 6 năm kinh nghiệm React.js/Next.js, từng triển khai sản phẩm cho khách hàng tại Việt Nam, Nhật Bản và Úc/New Zealand.",
   keywords: [
     "Nguyen Huu Tan",
     // The diacritic spelling is a distinct Vietnamese search term from the plain one.
     "Nguyễn Hữu Tấn",
     "Tronie Nguyen",
     "Frontend Developer",
-    "Mobile Developer",
     "React Developer",
     "Next.js Developer",
-    "React Native Engineer",
     "TypeScript Portfolio",
     "Software Engineer Vietnam",
     "Lập trình viên Frontend TP.HCM",
@@ -57,18 +55,18 @@ export const metadata: Metadata = {
     type: "website",
     locale: "vi_VN",
     url: siteUrl,
-    title: "Nguyen Huu Tan — Frontend & Mobile Developer",
+    title: "Nguyen Huu Tan — Frontend Developer",
     description:
-      "Chuyên xây dựng trải nghiệm Web & App hiện đại, mượt mà với Next.js, React Native & TypeScript.",
+      "6+ năm kinh nghiệm React.js/Next.js — dự án cho khách hàng tại Việt Nam, Nhật Bản và Úc/New Zealand.",
     siteName: "Nguyen Huu Tan Portfolio",
     // og:image comes from `src/app/opengraph-image.tsx`, which renders a real 1200x630
     // card. The raw photo is 697x929 portrait and must not be advertised as 1200x630.
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nguyen Huu Tan — Frontend & Mobile Developer",
+    title: "Nguyen Huu Tan — Frontend Developer",
     description:
-      "Chuyên xây dựng trải nghiệm Web & App hiện đại, mượt mà với Next.js, React Native & TypeScript.",
+      "6+ năm kinh nghiệm React.js/Next.js — dự án cho khách hàng tại Việt Nam, Nhật Bản và Úc/New Zealand.",
     // No twitter:image declared — Twitter falls back to og:image above.
     creator: "@nhtan5544",
   },

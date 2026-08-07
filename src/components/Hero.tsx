@@ -92,7 +92,7 @@ export default function Hero() {
                 {t("hero.i_am_a")}
               </span>
               <WordRotate
-                words={["Frontend Developer", "React Native Engineer", "UI/UX Craftsman", "Fullstack Developer"]}
+                words={["Frontend Developer", "React.js Developer", "UI/UX Craftsman"]}
                 className="text-lg sm:text-xl font-bold text-primary gradient-text"
               />
             </motion.div>
@@ -140,13 +140,13 @@ export default function Hero() {
             >
               <div>
                 <p className="text-2xl sm:text-3xl font-extrabold text-foreground font-mono flex items-center">
-                  <NumberTicker value={3} className="text-foreground" />+
+                  <NumberTicker value={6} className="text-foreground" />+
                 </p>
                 <p className="text-xs text-muted-foreground font-medium">{t("hero.stats.experience")}</p>
               </div>
               <div>
                 <p className="text-2xl sm:text-3xl font-extrabold text-foreground font-mono flex items-center">
-                  <NumberTicker value={12} className="text-foreground" />+
+                  <NumberTicker value={9} className="text-foreground" />
                 </p>
                 <p className="text-xs text-muted-foreground font-medium">{t("hero.stats.projects")}</p>
               </div>
@@ -193,7 +193,7 @@ export default function Hero() {
                 <BorderBeam size={200} duration={12} delay={9} colorFrom="#8b5cf6" colorTo="#ec4899" />
                 <div className="relative w-full aspect-4/5 rounded-xl overflow-hidden border border-border/50">
                   <Image
-                    src="/IMG_7719.jpg"
+                    src="/image.png"
                     alt={t("hero.avatar_alt")}
                     fill
                     sizes="(min-width: 1024px) 400px, 300px"
@@ -204,7 +204,7 @@ export default function Hero() {
                 <div className="pt-3 pb-1 px-1 flex items-center justify-between">
                   <div>
                     <p className="text-xs font-bold text-foreground">{t("hero.name")}</p>
-                    <p className="text-[11px] text-muted-foreground">Frontend & Mobile Dev</p>
+                    <p className="text-[11px] text-muted-foreground">Frontend Developer</p>
                   </div>
                   <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-[11px] font-semibold">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />

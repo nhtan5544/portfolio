@@ -14,15 +14,15 @@
     "greeting": "Xin chào, mình là",
     "name": "Nguyễn Hữu Tấn",
     "nameAlt": "Tronie Nguyen",
-    "title": "Frontend & Mobile Developer",
-    "subtitle": "Mình xây dựng giao diện web và ứng dụng di động rõ ràng, mượt mà và tối ưu hiệu suất.",
+    "title": "Frontend Developer",
+    "subtitle": "Mình xây dựng giao diện web rõ ràng, mượt mà và tối ưu hiệu suất.",
     "cta_primary": "Xem dự án",
     "cta_secondary": "Liên hệ ngay",
     "scroll": "Cuộn xuống",
     "i_am_a": "Mình là",
     "connect": "Kết nối:",
     "available": "Sẵn sàng",
-    "avatar_alt": "Nguyễn Hữu Tấn — Frontend & Mobile Developer, ảnh chân dung portfolio",
+    "avatar_alt": "Nguyễn Hữu Tấn — Frontend Developer, ảnh chân dung portfolio",
     "stats": {
       "experience": "Năm kinh nghiệm",
       "projects": "Dự án hoàn thành",
@@ -37,15 +37,14 @@
   },
   "about": {
     "title": "Giới thiệu về Nguyễn Hữu Tấn",
-    "subtitle": "Về mình",
+    "subtitle": "Vài nét về mình",
     "mindset_title": "Cách làm việc",
     "craft_title": "Chuyên môn",
-    "description1": "Mình là Nguyễn Hữu Tấn (Tronie Nguyen) — Frontend & Mobile Developer, tập trung xây dựng giao diện rõ ràng, mượt và tối ưu hiệu suất trên cả web lẫn ứng dụng di động.",
-    "description2": "Mình làm việc chủ yếu với React, Next.js và React Native, chú trọng chi tiết UI/UX, khả năng truy cập (accessibility) và code dễ bảo trì. Luôn sẵn sàng đón nhận thử thách mới.",
-    "photo_alt": "Nguyễn Hữu Tấn — lập trình viên phần mềm tại Thành phố Hồ Chí Minh",
+    "description1": "Mình quan tâm đến việc phát triển giao diện chạy nhanh và dễ bảo trì khi codebase lớn dần theo thời gian: cấu trúc component rõ ràng, chú trọng chi tiết UI/UX, và code mà đội ngũ khác vẫn dùng tốt sau khi mình rời dự án.",
+    "description2": "Hơn 6 năm phát triển ứng dụng React.js và Next.js trong môi trường production — từ hệ thống quản lý công trình xây dựng đến nền tảng ngân hàng và giữ trẻ, phục vụ khách hàng tại Việt Nam, Nhật Bản và Úc/New Zealand.",
     "focus": {
       "web": "Frontend Web",
-      "mobile": "Mobile App",
+      "mobile": "Responsive Design",
       "uiux": "UI/UX Craft"
     },
     "info": {
@@ -59,23 +58,24 @@
   },
   "skills": {
     "title": "Kỹ năng & Công nghệ",
-    "subtitle": "Công nghệ mình sử dụng",
+    "subtitle": "Stack kỹ thuật",
     "categories": {
       "core": "Ngôn ngữ & Nền tảng",
       "frameworks": "Frameworks & Libraries",
-      "tools": "Công cụ & Thiết kế"
+      "tools": "Cơ sở dữ liệu & Cloud"
     }
   },
   "projects": {
     "title": "Dự án tiêu biểu",
-    "subtitle": "Những gì mình đã xây dựng",
+    "subtitle": "Sản phẩm thực chiến",
     "view_demo": "Xem demo",
     "private": "Mã nguồn riêng tư",
-    "featured": "Nổi bật"
+    "featured": "Nổi bật",
+    "role_note": "Tag bên dưới là tech-stack của cả dự án — vai trò của mình xuyên suốt là Frontend Developer."
   },
   "contact": {
     "title": "Liên hệ hợp tác",
-    "subtitle": "Hãy cùng làm việc",
+    "subtitle": "Trò chuyện",
     "description": "Bạn có dự án thú vị? Hãy liên hệ với mình, mình rất muốn được hợp tác!",
     "name": "Họ tên",
     "email": "Email",

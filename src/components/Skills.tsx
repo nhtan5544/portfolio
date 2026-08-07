@@ -31,8 +31,11 @@ export default function Skills() {
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="mb-8 flex items-baseline justify-between border-b border-border/60 pb-4"
+          className="mb-8 border-b border-border/60 pb-4"
         >
+          <p className="text-xs font-semibold text-accent-foreground uppercase tracking-widest mb-2">
+            {t("skills.subtitle")}
+          </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground">
             {t("skills.title")}
           </h2>

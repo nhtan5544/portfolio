@@ -70,6 +70,9 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="mb-10 sm:mb-12 border-b border-border/60 pb-4 text-left"
         >
+          <p className="text-xs font-semibold text-accent-foreground uppercase tracking-widest mb-2">
+            {t("contact.subtitle")}
+          </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground mb-2">
             {t("contact.title")}
           </h2>

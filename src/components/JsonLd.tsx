@@ -9,10 +9,10 @@ export default function JsonLd() {
     // ASCII form is an alternate.
     name: "Nguyễn Hữu Tấn",
     alternateName: ["Nguyen Huu Tan", "Tronie Nguyen", "nhtan5544"],
-    jobTitle: "Frontend & Mobile Developer",
+    jobTitle: "Frontend Developer",
     knowsLanguage: ["vi", "en"],
     url: siteUrl,
-    image: `${siteUrl}/IMG_7719.jpg`,
+    image: `${siteUrl}/image.png`,
     email: "nhtan5544@gmail.com",
     telephone: "+84393930709",
     address: {
@@ -26,11 +26,13 @@ export default function JsonLd() {
       "TypeScript",
       "React",
       "Next.js",
-      "React Native",
       "Tailwind CSS",
       "Node.js",
+      ".NET / ASP.NET Core",
+      "MySQL",
+      "MongoDB",
+      "AWS",
       "Frontend Development",
-      "Mobile App Development",
       "UI/UX Design",
     ],
   };

@@ -14,15 +14,15 @@
     "greeting": "Hi, I'm",
     "name": "Nguyen Huu Tan",
     "nameAlt": "Tronie Nguyen",
-    "title": "Frontend & Mobile Developer",
-    "subtitle": "I build clear, smooth, and performance-minded interfaces for the web and mobile.",
+    "title": "Frontend Developer",
+    "subtitle": "I build clear, smooth, and performance-minded interfaces for the web.",
     "cta_primary": "View Projects",
     "cta_secondary": "Get in Touch",
     "scroll": "Scroll down",
     "i_am_a": "I am a",
     "connect": "Connect:",
     "available": "Available",
-    "avatar_alt": "Nguyen Huu Tan — Frontend & Mobile Developer portfolio portrait",
+    "avatar_alt": "Nguyen Huu Tan — Frontend Developer portfolio portrait",
     "stats": {
       "experience": "Years Experience",
       "projects": "Projects Completed",
@@ -37,15 +37,14 @@
   },
   "about": {
     "title": "About Nguyen Huu Tan",
-    "subtitle": "About Me",
+    "subtitle": "Who I Am",
     "mindset_title": "How I Work",
     "craft_title": "Craft",
-    "description1": "I'm Nguyen Huu Tan (Tronie Nguyen) — a Frontend & Mobile Developer focused on building clear, smooth, performance-minded interfaces for both web and mobile apps.",
-    "description2": "I work mainly with React, Next.js and React Native, with close attention to UI/UX detail, accessibility, and maintainable code. Always open to new challenges.",
-    "photo_alt": "Nguyen Huu Tan — software developer based in Ho Chi Minh City",
+    "description1": "I care about shipping interfaces that stay fast and easy to maintain as a codebase grows: clean component structure, close attention to UI/UX detail, and code a team can still work with long after I've moved on.",
+    "description2": "6+ years building production React.js and Next.js applications — from construction-site management systems to banking and childcare platforms, for clients across Vietnam, Japan, and Australia/New Zealand.",
     "focus": {
       "web": "Frontend Web",
-      "mobile": "Mobile App",
+      "mobile": "Responsive Design",
       "uiux": "UI/UX Craft"
     },
     "info": {
@@ -59,23 +58,24 @@
   },
   "skills": {
     "title": "Skills & Technologies",
-    "subtitle": "Technologies I work with",
+    "subtitle": "Tech Stack",
     "categories": {
       "core": "Languages & Core",
       "frameworks": "Frameworks & Libraries",
-      "tools": "Tools & Design"
+      "tools": "Databases & Cloud"
     }
   },
   "projects": {
     "title": "Featured Projects",
-    "subtitle": "What I've built",
+    "subtitle": "Real-World Work",
     "view_demo": "View Demo",
     "private": "Private source",
-    "featured": "Featured"
+    "featured": "Featured",
+    "role_note": "Tags show each project's full tech stack — my role throughout was Frontend Developer."
   },
   "contact": {
     "title": "Get in Touch",
-    "subtitle": "Let's work together",
+    "subtitle": "Let's Talk",
     "description": "Have an interesting project? Reach out, I'd love to collaborate!",
     "name": "Full Name",
     "email": "Email",

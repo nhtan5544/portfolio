@@ -2,15 +2,15 @@ import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 
-export const alt = "Nguyen Huu Tan — Frontend & Mobile Developer";
+export const alt = "Nguyen Huu Tan — Frontend Developer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 // All text drawn here stays ASCII on purpose: ImageResponse has no Vietnamese-capable
 // font bundled, so diacritics would not render. Adding VI text means bundling a font.
 export default async function Image() {
-  const photo = await readFile(path.join(process.cwd(), "public", "IMG_7719.jpg"));
-  const photoSrc = `data:image/jpeg;base64,${photo.toString("base64")}`;
+  const photo = await readFile(path.join(process.cwd(), "public", "image.png"));
+  const photoSrc = `data:image/png;base64,${photo.toString("base64")}`;
 
   return new ImageResponse(
     (
@@ -61,11 +61,11 @@ export default async function Image() {
           </div>
 
           <div style={{ fontSize: 38, fontWeight: 600, color: "#e9d5ff", marginTop: 14 }}>
-            Frontend &amp; Mobile Developer
+            Frontend Developer
           </div>
 
           <div style={{ fontSize: 25, color: "#a1a1aa", marginTop: 26 }}>
-            React · Next.js · React Native · TypeScript
+            React · Next.js · TypeScript
           </div>
 
           <div style={{ fontSize: 22, color: "#71717a", marginTop: 40 }}>
