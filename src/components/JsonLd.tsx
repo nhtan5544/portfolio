@@ -1,4 +1,4 @@
-const siteUrl = "https://portfolio-nhtan5544.vercel.app";
+import { siteUrl } from "@/lib/site";
 
 export default function JsonLd() {
   const personSchema = {

@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { LanguageProvider } from "@/context/LanguageContext";
 import JsonLd from "@/components/JsonLd";
 import { cn } from "@/lib/utils";
+import { siteUrl } from "@/lib/site";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -17,8 +18,6 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin", "vietnamese"],
   weight: ["600", "700", "800"],
 });
-
-const siteUrl = "https://portfolio-nhtan5544.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
