@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Nguyen Huu Tan — Portfolio",
     short_name: "NguyenHuuTan",
-    description: "Portfolio của Nguyen Huu Tan (Tronie Nguyen) — Frontend Developer 6+ năm kinh nghiệm React.js/Next.js.",
+    description: "Portfolio of Nguyen Huu Tan (Tronie Nguyen) — Frontend Developer with 6+ years of React.js/Next.js experience.",
     start_url: "/",
     display: "standalone",
     background_color: "#0a0a0f",

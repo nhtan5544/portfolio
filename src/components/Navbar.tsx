@@ -2,8 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { useTheme } from "next-themes";
-import { Sun, Moon, Menu, Languages, Mail, MousePointer2 } from "lucide-react";
+import { Menu, Mail, MousePointer2 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { autoplaySwarmOnce, startSwarm } from "@/lib/swarm";
 import { Button } from "@/components/ui/button";
@@ -25,8 +24,7 @@ const navLinks = [
 ];
 
 export default function Navbar() {
-  const { resolvedTheme, setTheme } = useTheme();
-  const { locale, toggleLocale, t } = useLanguage();
+  const { t } = useLanguage();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
 
@@ -61,31 +59,12 @@ export default function Navbar() {
       className="fixed top-4 sm:top-6 left-0 right-0 z-50 px-4"
     >
       <div className="max-w-6xl mx-auto flex items-center justify-between gap-3">
-        {/* Left — theme + language, floating pill */}
-        <div className="flex items-center gap-2 rounded-full border border-border bg-card/80 backdrop-blur-xl p-1.5 shadow-sm">
+        {/* Left — swarm rebuild, floating pill (desktop only) */}
+        <div className="hidden md:flex items-center gap-2 rounded-full border border-border bg-card/80 backdrop-blur-xl p-1.5 shadow-sm">
           <Button
             variant="ghost"
             size="icon"
             className="rounded-full"
-            onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-            aria-label={t("nav.toggle_theme")}
-          >
-            <Sun className="size-4 dark:hidden" />
-            <Moon className="size-4 hidden dark:block" />
-          </Button>
-          <Button
-            variant="ghost"
-            size="icon"
-            className="rounded-full text-xs font-bold"
-            onClick={toggleLocale}
-            aria-label={`${t("nav.switch_language")} (${locale === "vi" ? "Tiếng Việt" : "English"})`}
-          >
-            <Languages className="size-4" />
-          </Button>
-          <Button
-            variant="ghost"
-            size="icon"
-            className="hidden md:inline-flex rounded-full"
             onClick={() => startSwarm().catch((err) => console.error("[swarm-rebuild]", err))}
             aria-label={t("nav.rebuild")}
             title={t("nav.rebuild")}
@@ -124,8 +103,8 @@ export default function Navbar() {
           })}
         </div>
 
-        {/* Right — contact CTA (desktop) / menu (mobile) */}
-        <div className="flex items-center gap-2">
+        {/* Right — contact CTA (desktop) / menu (mobile); ml-auto keeps it right when it's alone on mobile */}
+        <div className="max-md:ml-auto flex items-center gap-2">
           <Button
             variant="ghost"
             className="hidden sm:inline-flex rounded-full border border-border bg-card/80 backdrop-blur-xl shadow-sm"

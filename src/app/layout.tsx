@@ -1,21 +1,19 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/ThemeProvider";
-import { LanguageProvider } from "@/context/LanguageContext";
 import JsonLd from "@/components/JsonLd";
 import { cn } from "@/lib/utils";
 import { siteUrl } from "@/lib/site";
 
 const inter = Inter({
   variable: "--font-sans",
-  subsets: ["latin", "vietnamese"],
+  subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
 });
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-heading",
-  subsets: ["latin", "vietnamese"],
+  subsets: ["latin"],
   weight: ["600", "700", "800"],
 });
 
@@ -26,10 +24,10 @@ export const metadata: Metadata = {
     template: "%s | Nguyen Huu Tan Portfolio",
   },
   description:
-    "Portfolio cá nhân của Nguyen Huu Tan (Tronie Nguyen) — Frontend Developer với hơn 6 năm kinh nghiệm React.js/Next.js, từng triển khai sản phẩm cho khách hàng tại Việt Nam, Nhật Bản và Úc/New Zealand.",
+    "Personal portfolio of Nguyen Huu Tan (Tronie Nguyen) — Frontend Developer with 6+ years of React.js/Next.js experience, shipping products for clients in Vietnam, Japan and Australia/New Zealand.",
   keywords: [
     "Nguyen Huu Tan",
-    // The diacritic spelling is a distinct Vietnamese search term from the plain one.
+    // SEO only (never rendered): the diacritic spelling is a distinct search term from the plain one.
     "Nguyễn Hữu Tấn",
     "Tronie Nguyen",
     "Frontend Developer",
@@ -37,7 +35,7 @@ export const metadata: Metadata = {
     "Next.js Developer",
     "TypeScript Portfolio",
     "Software Engineer Vietnam",
-    "Lập trình viên Frontend TP.HCM",
+    "Frontend Developer Ho Chi Minh City",
   ],
   authors: [{ name: "Nguyen Huu Tan", url: siteUrl }],
   creator: "Nguyen Huu Tan",
@@ -52,11 +50,11 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "vi_VN",
+    locale: "en_US",
     url: siteUrl,
     title: "Nguyen Huu Tan — Frontend Developer",
     description:
-      "6+ năm kinh nghiệm React.js/Next.js — dự án cho khách hàng tại Việt Nam, Nhật Bản và Úc/New Zealand.",
+      "6+ years of React.js/Next.js experience — projects for clients in Vietnam, Japan and Australia/New Zealand.",
     siteName: "Nguyen Huu Tan Portfolio",
     // og:image comes from `src/app/opengraph-image.tsx`, which renders a real 1200x630
     // card. The raw photo is 697x929 portrait and must not be advertised as 1200x630.
@@ -65,7 +63,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Nguyen Huu Tan — Frontend Developer",
     description:
-      "6+ năm kinh nghiệm React.js/Next.js — dự án cho khách hàng tại Việt Nam, Nhật Bản và Úc/New Zealand.",
+      "6+ years of React.js/Next.js experience — projects for clients in Vietnam, Japan and Australia/New Zealand.",
     // No twitter:image declared — Twitter falls back to og:image above.
     creator: "@nhtan5544",
   },
@@ -86,11 +84,10 @@ export const metadata: Metadata = {
     : undefined,
 };
 
+// Dark is the only theme: native UI (scrollbars, form controls) follows it via color-scheme.
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#7c3aed" },
-    { media: "(prefers-color-scheme: dark)", color: "#0a0a0f" },
-  ],
+  themeColor: "#0a0a0f",
+  colorScheme: "dark",
 };
 
 export default function RootLayout({
@@ -98,20 +95,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // `dark` is fixed (no theme switching); it still drives the `dark:` utilities in components.
   return (
     <html
-      lang="vi"
-      className={cn("h-full", "antialiased", inter.variable, plusJakartaSans.variable, "font-sans")}
-      suppressHydrationWarning
+      lang="en"
+      className={cn("dark", "h-full", "antialiased", inter.variable, plusJakartaSans.variable, "font-sans")}
     >
       <head>
         <JsonLd />
       </head>
-      <body className="min-h-full flex flex-col">
-        <ThemeProvider>
-          <LanguageProvider>{children}</LanguageProvider>
-        </ThemeProvider>
-      </body>
+      <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
 }

@@ -13,8 +13,7 @@ import { Meteors } from "@/components/ui/meteors";
 
 const CONTACT_EMAIL = "nhtan5544@gmail.com";
 
-// `value` holds literals that stay as-is in every locale (email, phone number);
-// `valueKey` is for values that do get translated.
+// `value` holds literals (email, phone number); `valueKey` is a copy key in en.json.
 type ContactItem = {
   icon: typeof Mail;
   labelKey: string;

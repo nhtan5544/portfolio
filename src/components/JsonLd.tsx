@@ -5,10 +5,10 @@ export default function JsonLd() {
     "@context": "https://schema.org",
     "@type": "Person",
     "@id": `${siteUrl}#person`,
-    // The page is `lang="vi"`, so the Vietnamese spelling is the primary name and the
-    // ASCII form is an alternate.
-    name: "Nguyễn Hữu Tấn",
-    alternateName: ["Nguyen Huu Tan", "Tronie Nguyen", "nhtan5544"],
+    // The page is English, so the ASCII spelling is the primary name; the diacritic spelling
+    // stays an alternate (SEO only, never rendered) for people who search it that way.
+    name: "Nguyen Huu Tan",
+    alternateName: ["Nguyễn Hữu Tấn", "Tronie Nguyen", "nhtan5544"],
     jobTitle: "Frontend Developer",
     knowsLanguage: ["vi", "en"],
     url: siteUrl,
