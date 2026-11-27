@@ -3,8 +3,9 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
-import { Sun, Moon, Menu, Languages, Mail } from "lucide-react";
+import { Sun, Moon, Menu, Languages, Mail, MousePointer2 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import { autoplaySwarmOnce, startSwarm } from "@/lib/swarm";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -45,6 +46,8 @@ export default function Navbar() {
     return () => observers.forEach((obs) => obs?.disconnect());
   }, []);
 
+  useEffect(() => autoplaySwarmOnce(), []);
+
   const handleNavClick = (href: string) => {
     setMobileOpen(false);
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
@@ -78,6 +81,16 @@ export default function Navbar() {
             aria-label={`${t("nav.switch_language")} (${locale === "vi" ? "Tiếng Việt" : "English"})`}
           >
             <Languages className="size-4" />
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="hidden md:inline-flex rounded-full"
+            onClick={() => startSwarm().catch((err) => console.error("[swarm-rebuild]", err))}
+            aria-label={t("nav.rebuild")}
+            title={t("nav.rebuild")}
+          >
+            <MousePointer2 className="size-4" />
           </Button>
         </div>
 

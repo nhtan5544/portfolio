@@ -51,6 +51,7 @@ export const ShimmerButton = React.forwardRef<
       >
         {/* spark container */}
         <div
+          data-swarm-skip
           className={cn(
             "-z-30 blur-[2px]",
             "@container-[size] absolute inset-0 overflow-visible"
@@ -84,6 +85,7 @@ export const ShimmerButton = React.forwardRef<
 
         {/* backdrop */}
         <div
+          data-swarm-skip
           className={cn(
             "absolute inset-(--cut) -z-20 [border-radius:var(--radius)] [background:var(--bg)]"
           )}

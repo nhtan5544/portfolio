@@ -8,7 +8,8 @@
     "menu": "Danh mục",
     "toggle_theme": "Đổi giao diện sáng/tối",
     "switch_language": "Đổi ngôn ngữ",
-    "open_menu": "Mở menu"
+    "open_menu": "Mở menu",
+    "rebuild": "Xem đàn con trỏ dựng lại trang này"
   },
   "hero": {
     "greeting": "Xin chào, mình là",

@@ -216,6 +216,16 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* Swarm Rebuild (src/lib/swarm.ts), while it snapshots and covers the page: hide decor it can't
+   redraw, and hold looping text animations at rest so the snapshot never catches them mid-swap. */
+html[data-swarm] [data-swarm-skip] {
+  display: none !important;
+}
+html[data-swarm] [data-swarm-settle] {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 /* Dotted-grid backdrop used behind hero/section content. */
 .dot-grid {
   background-image: radial-gradient(circle, var(--border) 1px, transparent 1px);

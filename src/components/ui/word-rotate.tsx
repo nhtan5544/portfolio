@@ -3,8 +3,6 @@
 import { useEffect, useState } from "react"
 import { AnimatePresence, motion, type MotionProps } from "motion/react"
 
-import { cn } from "@/lib/utils"
-
 interface WordRotateProps {
   words: string[]
   duration?: number
@@ -39,10 +37,13 @@ export function WordRotate({
       <AnimatePresence mode="wait">
         <motion.span
           key={words[index]}
-          className={cn("block", className)}
+          data-swarm-settle
+          className="block"
           {...motionProps}
         >
-          {words[index]}
+          {/* className sits on an inner span: Swarm Rebuild (src/lib/swarm.ts) can redraw
+              background-clip:text (.gradient-text) on a descendant, not on a text block's own box. */}
+          <span className={className}>{words[index]}</span>
         </motion.span>
       </AnimatePresence>
     </div>
