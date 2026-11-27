@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { ExternalLink, Lock, Star, Baby, Warehouse, HardHat, CalendarCheck, Landmark, Carrot, Car, Pizza, MessageCircle } from "lucide-react";
+import { ExternalLink, Lock, Star, Baby, Warehouse, HardHat, CalendarCheck, Landmark, Carrot, Car, Pizza, MessageCircle, Smartphone } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -11,14 +11,15 @@ import { BorderBeam } from "@/components/ui/border-beam";
 import { cn } from "@/lib/utils";
 
 // Real project history, sourced from CV. All repos are private client/company
-// codebases (no public demo links) — newest/ongoing engagements first.
-const projectsData = [
+// codebases (no public demo links) — featured first, then newest/ongoing engagements first.
+// Exported so the hero's project count always matches the cards.
+export const projectsData = [
     {
         title: "Care For Kids",
         category: "B2B2C PLATFORM",
         period: "2023 — Ongoing",
-        description: "Large-scale B2B2C platform connecting parents with childcare providers across Australia and New Zealand — centre search, tour bookings, reviews, provider profile management, content blogging, online payments and automated workflows.",
-        tags: [".NET 10 / ASP.NET Core", "React", "TypeScript", "SQL Server", "Tailwind CSS", "Entity Framework Core", "Hangfire"],
+        description: "Large-scale B2B2C platform connecting parents with childcare providers across Australia and New Zealand — in-person tour booking and centre management in the React provider portal, a reviews and enquiry-flow overhaul on the .NET 10 website, and an embeddable Next.js widget for booking tours by time slot.",
+        tags: [".NET 10 / ASP.NET Core", "React", "Next.js", "TypeScript", "Vite", "MUI", "Tailwind CSS", "Stripe", "SQL Server", "Entity Framework Core", "Hangfire"],
         icon: Baby,
         gradient: "from-rose-500 to-pink-600",
         featured: true,
@@ -33,6 +34,17 @@ const projectsData = [
         icon: HardHat,
         gradient: "from-amber-500 to-yellow-600",
         featured: true,
+        demo: null as string | null,
+    },
+    {
+        title: "Havago",
+        category: "MOBILE APP",
+        period: "2026 — Ongoing",
+        description: "Cross-platform iOS & Android app for Havago, a Care For Kids brand — parents browse childcare providers, send enquiries, manage bookings and their children's profiles, and sign in with Google or a phone number.",
+        tags: ["Expo", "React Native", "TypeScript", "Expo Router", "TanStack Query", "Zustand", "React Hook Form", "Zod", "Tailwind (Uniwind)"],
+        icon: Smartphone,
+        gradient: "from-indigo-500 to-violet-600",
+        featured: false,
         demo: null as string | null,
     },
     {
