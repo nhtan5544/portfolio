@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { ExternalLink, Lock, Star, Baby, Warehouse, HardHat, CalendarCheck, Landmark, Carrot, Car, Pizza, MessageCircle } from "lucide-react";
+import { ExternalLink, Lock, Star, Baby, Warehouse, HardHat, CalendarCheck, Landmark, Carrot, Car, Pizza, MessageCircle, Smartphone } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -11,17 +11,15 @@ import { BorderBeam } from "@/components/ui/border-beam";
 import { cn } from "@/lib/utils";
 
 // Real project history, sourced from CV. All repos are private client/company
-// codebases (no public demo links) — newest/ongoing engagements first.
-const projectsData = [
+// codebases (no public demo links) — featured first, then newest/ongoing engagements first.
+// Exported so the hero's project count always matches the cards.
+export const projectsData = [
     {
         title: "Care For Kids",
         category: "B2B2C PLATFORM",
         period: "2023 — Ongoing",
-        description: {
-            vi: "Nền tảng B2B2C quy mô lớn kết nối phụ huynh với các cơ sở giữ trẻ tại Úc và New Zealand — tìm kiếm trung tâm, đặt lịch tham quan, đánh giá, quản lý hồ sơ nhà cung cấp, blog nội dung, thanh toán online và các quy trình tự động.",
-            en: "Large-scale B2B2C platform connecting parents with childcare providers across Australia and New Zealand — centre search, tour bookings, reviews, provider profile management, content blogging, online payments and automated workflows.",
-        },
-        tags: [".NET 10 / ASP.NET Core", "React", "TypeScript", "SQL Server", "Tailwind CSS", "Entity Framework Core", "Hangfire"],
+        description: "Large-scale B2B2C platform connecting parents with childcare providers across Australia and New Zealand — in-person tour booking and centre management in the React provider portal, a reviews and enquiry-flow overhaul on the .NET 10 website, and an embeddable Next.js widget for booking tours by time slot.",
+        tags: [".NET 10 / ASP.NET Core", "React", "Next.js", "TypeScript", "Vite", "MUI", "Tailwind CSS", "Stripe", "SQL Server", "Entity Framework Core", "Hangfire"],
         icon: Baby,
         gradient: "from-rose-500 to-pink-600",
         featured: true,
@@ -31,10 +29,7 @@ const projectsData = [
         title: "Sitesmart Technology",
         category: "CONSTRUCTION MANAGEMENT",
         period: "2022 — Ongoing",
-        description: {
-            vi: "Ứng dụng web và di động quản lý toàn bộ nguồn lực công trình xây dựng — máy móc và hồ sơ đi kèm, nhân sự và chứng chỉ, công việc và nhiều hơn nữa.",
-            en: "Web and mobile application to manage every resource of a construction site — machines and their documents, workers and their licenses, tasks and more.",
-        },
+        description: "Web and mobile application to manage every resource of a construction site — machines and their documents, workers and their licenses, tasks and more.",
         tags: ["React", "Micro-frontend", "Flutter", "Node.js", "AWS Fargate", "MongoDB"],
         icon: HardHat,
         gradient: "from-amber-500 to-yellow-600",
@@ -42,13 +37,21 @@ const projectsData = [
         demo: null as string | null,
     },
     {
+        title: "Havago",
+        category: "MOBILE APP",
+        period: "2026 — Ongoing",
+        description: "Cross-platform iOS & Android app for Havago, a Care For Kids brand — parents browse childcare providers, send enquiries, manage bookings and their children's profiles, and sign in with Google or a phone number.",
+        tags: ["Expo", "React Native", "TypeScript", "Expo Router", "TanStack Query", "Zustand", "React Hook Form", "Zod", "Tailwind (Uniwind)"],
+        icon: Smartphone,
+        gradient: "from-indigo-500 to-violet-600",
+        featured: false,
+        demo: null as string | null,
+    },
+    {
         title: "TWSS Web Application",
         category: "INVENTORY MANAGEMENT",
         period: "2022 — Ongoing",
-        description: {
-            vi: "Hệ thống quản lý tồn kho, giúp nhà cung cấp, nhà phân phối và người bán mua bán sản phẩm lẫn nhau trong khi vẫn theo dõi lượng hàng tồn của riêng mình.",
-            en: "Inventory management platform where suppliers, distributors, and merchants trade with each other while tracking their own stock levels.",
-        },
+        description: "Inventory management platform where suppliers, distributors, and merchants trade with each other while tracking their own stock levels.",
         tags: ["React", "Next.js", "TypeScript", "Flutter", "Python", "Django REST Framework", "MySQL", "AWS", "Terraform"],
         icon: Warehouse,
         gradient: "from-sky-500 to-indigo-600",
@@ -59,10 +62,7 @@ const projectsData = [
         title: "Bizbookly Web Application",
         category: "SALON BOOKING",
         period: "2021 — Ongoing",
-        description: {
-            vi: "Nền tảng đặt lịch cho tiệm nail — chủ động sắp xếp thời gian, phân bổ công việc hợp lý và theo dõi thu nhập nhân viên theo từng chi nhánh.",
-            en: "Booking platform for nail salons — be proactive with time, arrange work properly, and track staff income by salon branch.",
-        },
+        description: "Booking platform for nail salons — be proactive with time, arrange work properly, and track staff income by salon branch.",
         tags: ["React", "Next.js", "TypeScript", "Flutter", "Python", "Django REST Framework", "MySQL", "AWS", "Terraform"],
         icon: CalendarCheck,
         gradient: "from-fuchsia-500 to-purple-600",
@@ -73,10 +73,7 @@ const projectsData = [
         title: "Japan Banking",
         category: "BANKING",
         period: "2021",
-        description: {
-            vi: "Nền tảng ngân hàng phục vụ cả khách hàng và nhân viên tại Nhật Bản — quy trình vay, trả nợ và quản lý tài khoản.",
-            en: "Banking platform serving both customers and staff in Japan — loan procedures, repayments, and account management.",
-        },
+        description: "Banking platform serving both customers and staff in Japan — loan procedures, repayments, and account management.",
         tags: ["React", ".NET", "MySQL", "TypeScript", "Jest"],
         icon: Landmark,
         gradient: "from-blue-600 to-slate-700",
@@ -87,10 +84,7 @@ const projectsData = [
         title: "Vegetable E-Commerce Website",
         category: "E-COMMERCE",
         period: "2020 — 2021",
-        description: {
-            vi: "Sàn thương mại điện tử kết nối trực tiếp nông trại rau củ với khách hàng.",
-            en: "E-commerce marketplace connecting vegetable farms directly with customers.",
-        },
+        description: "E-commerce marketplace connecting vegetable farms directly with customers.",
         tags: ["React", "Flutter", "Node.js", "MongoDB", "MySQL"],
         icon: Carrot,
         gradient: "from-green-500 to-emerald-600",
@@ -101,10 +95,7 @@ const projectsData = [
         title: "AZGO",
         category: "TRANSPORTATION",
         period: "2020",
-        description: {
-            vi: "Ứng dụng dịch vụ vận chuyển tại Việt Nam.",
-            en: "Transportation service application in Vietnam.",
-        },
+        description: "Transportation service application in Vietnam.",
         tags: ["React", "Laravel", "MySQL", "Redux Saga", "SCSS", "Webpack"],
         icon: Car,
         gradient: "from-orange-500 to-red-600",
@@ -115,10 +106,7 @@ const projectsData = [
         title: "Domino Pizza Website",
         category: "E-COMMERCE",
         period: "2020",
-        description: {
-            vi: "Nền tảng đặt hàng trực tuyến cho chuỗi pizza — quản lý đơn hàng, vận chuyển và tích hợp cổng thanh toán.",
-            en: "Online ordering platform for a pizza chain — order management, shipping, and payment gateway integration.",
-        },
+        description: "Online ordering platform for a pizza chain — order management, shipping, and payment gateway integration.",
         tags: ["Next.js", ".NET Core", "SQL Server", "TypeScript", "SCSS Modules"],
         icon: Pizza,
         gradient: "from-red-500 to-rose-700",
@@ -129,10 +117,7 @@ const projectsData = [
         title: "[Freelancer] Module App Chat",
         category: "FREELANCE",
         period: "2020",
-        description: {
-            vi: "Module freelance quản lý khung giờ và phòng livestream, hỏi đáp khách hàng và xử lý chatbox thời gian thực.",
-            en: "Application to manage live stream time frames and rooms, handle customer questions and real-time chatbox.",
-        },
+        description: "Application to manage live stream time frames and rooms, handle customer questions and real-time chatbox.",
         tags: ["React", ".NET Core", "SQL Server", "TypeScript", "Ant Design", "AWS Amplify"],
         icon: MessageCircle,
         gradient: "from-teal-500 to-cyan-600",
@@ -142,7 +127,7 @@ const projectsData = [
 ];
 
 export default function Projects() {
-    const { t, locale } = useLanguage();
+    const { t } = useLanguage();
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -210,7 +195,7 @@ export default function Projects() {
                   <div>
                     <h3 className="text-base font-bold text-foreground mb-1.5">{project.title}</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      {project.description[locale as "vi" | "en"]}
+                      {project.description}
                     </p>
                   </div>
 

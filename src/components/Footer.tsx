@@ -24,6 +24,7 @@ export default function Footer() {
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
                     className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground"
                 >
                     <p className="flex items-center gap-2">

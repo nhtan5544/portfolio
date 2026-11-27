@@ -240,7 +240,9 @@ export default function SkillsGlobe() {
 
   return (
     <div className="h-105 sm:h-130 w-full">
-      <Canvas camera={{ position: [0, 0, 8.5], fov: 45 }} dpr={[1, 1.5]}>
+      {/* preserveDrawingBuffer keeps the last frame readable, so Swarm Rebuild (src/lib/swarm.ts)
+          can copy the globe into its snapshot instead of dropping a blank WebGL canvas. */}
+      <Canvas camera={{ position: [0, 0, 8.5], fov: 45 }} dpr={[1, 1.5]} gl={{ preserveDrawingBuffer: true }}>
         <WireframeSphere />
         <InnerCore />
         <GlowShell meshRef={glowRef} />

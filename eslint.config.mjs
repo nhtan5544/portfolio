@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Vendored third-party script, kept byte-for-byte as upstream.
+    "public/swarm/**",
   ]),
 ]);
 

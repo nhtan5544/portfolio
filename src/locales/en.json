@@ -6,9 +6,8 @@
     "projects": "Projects",
     "contact": "Contact",
     "menu": "Menu",
-    "toggle_theme": "Toggle theme",
-    "switch_language": "Switch language",
-    "open_menu": "Open menu"
+    "open_menu": "Open menu",
+    "rebuild": "Watch the swarm rebuild this page"
   },
   "hero": {
     "greeting": "Hi, I'm",

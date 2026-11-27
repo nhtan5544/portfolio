@@ -9,6 +9,7 @@ import { BorderBeam } from "@/components/ui/border-beam";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
 import { WordRotate } from "@/components/ui/word-rotate";
 import { NumberTicker } from "@/components/ui/number-ticker";
+import { projectsData } from "@/components/Projects";
 
 const socialLinks = [
   { icon: Github, href: "https://github.com/nhtan5544", label: "GitHub" },
@@ -146,7 +147,7 @@ export default function Hero() {
               </div>
               <div>
                 <p className="text-2xl sm:text-3xl font-extrabold text-foreground font-mono flex items-center">
-                  <NumberTicker value={9} className="text-foreground" />
+                  <NumberTicker value={projectsData.length} className="text-foreground" />
                 </p>
                 <p className="text-xs text-muted-foreground font-medium">{t("hero.stats.projects")}</p>
               </div>

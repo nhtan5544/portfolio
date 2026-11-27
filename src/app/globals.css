@@ -89,43 +89,8 @@
     opacity: 0;}}}
 
 /* Reference-inspired direction (pszostak.pl) — near-black/white + violet accent,
-   indigo→pink gradient reserved for the name headline only. */
+   indigo→pink gradient reserved for the name headline only. Dark is the only theme. */
 :root {
-  --background: #ffffff;
-  --foreground: #16141f;
-  --card: #f4f4f5;
-  --card-foreground: #16141f;
-  --popover: #ffffff;
-  --popover-foreground: #16141f;
-  --primary: #7c3aed;
-  --primary-foreground: #ffffff;
-  --secondary: #eeecf7;
-  --secondary-foreground: #16141f;
-  --muted: #eeecf7;
-  --muted-foreground: #6b6880;
-  --accent: #ede9fe;
-  --accent-foreground: #7c3aed;
-  --destructive: #dc2626;
-  --border: #e3e0ef;
-  --input: #e3e0ef;
-  --ring: #7c3aed;
-  --radius: 0.75rem;
-  --chart-1: var(--primary);
-  --chart-2: var(--muted-foreground);
-  --chart-3: var(--border);
-  --chart-4: var(--secondary);
-  --chart-5: var(--accent-foreground);
-  --sidebar: var(--card);
-  --sidebar-foreground: var(--foreground);
-  --sidebar-primary: var(--primary);
-  --sidebar-primary-foreground: var(--primary-foreground);
-  --sidebar-accent: var(--accent);
-  --sidebar-accent-foreground: var(--accent-foreground);
-  --sidebar-border: var(--border);
-  --sidebar-ring: var(--ring);
-}
-
-.dark {
   --background: #0a0a0f;
   --foreground: #f2f2f5;
   --card: #18181b;
@@ -144,6 +109,7 @@
   --border: #27272a;
   --input: #ffffff26;
   --ring: #8b5cf6;
+  --radius: 0.75rem;
   --chart-1: var(--primary);
   --chart-2: var(--muted-foreground);
   --chart-3: var(--border);
@@ -214,6 +180,16 @@ h1, h2, h3, h4, h5, h6 {
     animation: none;
     background-image: linear-gradient(135deg, #6366f1, #ec4899);
   }
+}
+
+/* Swarm Rebuild (src/lib/swarm.ts), while it snapshots and covers the page: hide decor it can't
+   redraw, and hold looping text animations at rest so the snapshot never catches them mid-swap. */
+html[data-swarm] [data-swarm-skip] {
+  display: none !important;
+}
+html[data-swarm] [data-swarm-settle] {
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 /* Dotted-grid backdrop used behind hero/section content. */
